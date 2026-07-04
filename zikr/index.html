@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maxfiylik siyosati — Zikr ilovasi</title>
+  <meta name="description" content="Zikr — Islomiy amallar hamrohi ilovasi maxfiylik siyosati" />
+  <style>
+    :root {
+      --bg: #f4f3ef;
+      --card: #ffffff;
+      --ink: #23302c;
+      --muted: #5d6b64;
+      --accent: #1f7a5a;
+      --border: #e3e6e1;
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.75;
+      font-size: 17px;
+    }
+    .wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 32px 20px 80px;
+    }
+    header {
+      text-align: center;
+      padding: 44px 0 30px;
+      border-bottom: 1px solid var(--border);
+    }
+    header .app {
+      display: inline-block;
+      font-size: 14px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    h1 {
+      font-size: 30px;
+      line-height: 1.25;
+      margin: 0 0 14px;
+    }
+    .meta {
+      color: var(--muted);
+      font-size: 15px;
+      margin: 4px 0;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 8px 30px 30px;
+      margin-top: 26px;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+    }
+    .intro {
+      background: #eef5f1;
+      border: 1px solid #d6e6dd;
+      border-radius: 14px;
+      padding: 20px 26px;
+      margin-top: 26px;
+    }
+    .intro p { margin: 0; }
+    h2 {
+      font-size: 20px;
+      margin: 30px 0 10px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+      color: var(--accent);
+    }
+    h2:first-of-type { margin-top: 8px; }
+    p { margin: 14px 0; }
+    ul { margin: 14px 0; padding-left: 22px; }
+    li { margin: 8px 0; }
+    strong { color: var(--ink); font-weight: 700; }
+    a { color: var(--accent); }
+    .outro {
+      font-style: italic;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 30px;
+      padding: 0 10px;
+    }
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 36px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <span class="app">Zikr — Islomiy amallar hamrohi</span>
+      <h1>Maxfiylik siyosati</h1>
+      <p class="meta"><strong>Kuchga kirgan sana:</strong> 2026-yil 21-iyun</p>
+      <p class="meta"><strong>Ilova:</strong> Zikr — Islomiy amallar hamrohi (<code>com.zikrapp.zikr_app</code>)</p>
+    </header>
+
+    <section class="intro">
+      <p>Zikr ilovasi sizning maxfiyligingizni hurmat qiladi. Ushbu hujjat ilova qanday ma'lumot bilan ishlashini sodda tilda tushuntiradi. Qisqasi: <strong>biz sizning shaxsiy ma'lumotlaringizni yig'maymiz, serverimizda saqlamaymiz va hech kimga sotmaymiz.</strong></p>
+    </section>
+
+    <section class="card">
+      <h2>1. Biz yig'adigan ma'lumot</h2>
+      <p>Ilova quyidagi ma'lumotlarni <strong>faqat sizning qurilmangizda</strong> (mahalliy Hive ma'lumotlar bazasida) saqlaydi. Bu ma'lumotlar bizning yoki uchinchi tomon serverlariga <strong>yuborilmaydi</strong>:</p>
+      <ul>
+        <li><strong>Ibodat yozuvlari:</strong> zikr (tasbih) sanoqlari, streak, o'qilgan namozlar ("O'qidim" belgilari), ro'za tracker, challenge natijalari.</li>
+        <li><strong>Sozlamalar:</strong> tanlangan tema, shahar, qori, vibratsiya rejimi, bildirishnoma sozlamalari.</li>
+        <li><strong>Foydalanish hodisalari (engagement):</strong> ilovani qaysi vaqtlarda ochishingiz — faqat "aqlli eslatmalar" funksiyasi sizning faol soatlaringizni o'rganishi uchun. Bu ma'lumot qurilmadan chiqmaydi.</li>
+        <li><strong>Xatcho'plar:</strong> saqlangan hadis, duo va oyatlar.</li>
+      </ul>
+      <p>Bizda <strong>hisob (account) tizimi yo'q</strong> — ro'yxatdan o'tish, login, parol talab qilinmaydi. Ism va shahar onboarding'da so'raladi va faqat qurilmada saqlanadi.</p>
+
+      <h2>2. Joylashuv (GPS)</h2>
+      <p>Joylashuvdan <strong>faqat ikki maqsadda</strong> foydalaniladi:</p>
+      <ul>
+        <li><strong>Namoz vaqtlari</strong> va <strong>qibla yo'nalishini</strong> aniqlash (qurilmada, offline hisoblanadi).</li>
+        <li><strong>Yaqin masjidlarni</strong> topish — koordinatangiz OpenStreetMap Overpass API'ga yuboriladi (faqat shu so'rov uchun, saqlanmaydi).</li>
+      </ul>
+      <p>Joylashuv ma'lumotingiz bizning serverimizga <strong>saqlanmaydi va yuborilmaydi</strong>. Ruxsatni istalgan vaqtda qurilma sozlamalaridan bekor qilishingiz mumkin.</p>
+
+      <h2>3. Internetga ulanish (uchinchi tomon xizmatlari)</h2>
+      <p>Ilova oflayn ishlaydi, ammo ba'zi kontent uchun quyidagi <strong>ochiq, bepul</strong> xizmatlarga so'rov yuboradi (faqat zarur ma'lumot — masalan sura raqami yoki koordinatalar — yuboriladi, shaxsiy identifikatoringiz emas):</p>
+      <ul>
+        <li><strong>alquran.cloud</strong> — Qur'on oyatlari matni va tarjimasi</li>
+        <li><strong>quran.com</strong> — tafsir</li>
+        <li><strong>cdn.islamic.network</strong> — Qur'on audio (qori ovozlari)</li>
+        <li><strong>islamcan.com</strong> — adhan (azon) audio</li>
+        <li><strong>OpenStreetMap / Overpass API</strong> — masjid xaritasi va yaqin masjidlar</li>
+        <li><strong>OpenStreetMap tile serverlari</strong> — xarita rasmlari</li>
+      </ul>
+      <p>Bu xizmatlarning o'z maxfiylik siyosatlari mavjud. Ular so'rovni qabul qilganda qurilmangizning IP manzilini ko'rishi mumkin (bu har qanday internet so'rovi uchun odatiy holat).</p>
+
+      <h2>4. Reklama va analitika</h2>
+      <p>Ilovada <strong>reklama yo'q</strong>, <strong>uchinchi tomon analitika (Google Analytics, Firebase va h.k.) yo'q</strong>, <strong>kuzatuv (tracking) yo'q</strong>. Hech qanday ma'lumotingiz reklama yoki profil tuzish uchun ishlatilmaydi.</p>
+
+      <h2>5. Bildirishnomalar</h2>
+      <p>Ilova namoz vaqtlari, zikr eslatmalari, kunlik hikmat va shunga o'xshash mahalliy bildirishnomalarni qurilmangizda rejalashtiradi. Bildirishnomalar <strong>mahalliy</strong> (local) — tashqi push server ishlatilmaydi.</p>
+
+      <h2>6. Ma'lumotni saqlash va o'chirish</h2>
+      <ul>
+        <li>Barcha ma'lumot qurilmangizda saqlanadi. <strong>Ilovani o'chirsangiz</strong> — barcha ma'lumot ham o'chadi.</li>
+        <li>"Backup" funksiyasi ma'lumotingizni <strong>ZIP fayl</strong> sifatida eksport qiladi va siz uni o'zingiz tanlagan joyga (Telegram, fayl menejeri va h.k.) ulashasiz. Bu jarayon to'liq sizning nazoratingizda; biz nusxa olmaymiz.</li>
+      </ul>
+
+      <h2>7. Bolalar maxfiyligi</h2>
+      <p>Ilova umumiy auditoriya uchun mo'ljallangan va bolalardan ataylab ma'lumot yig'maydi. Hisob tizimi va ma'lumot yig'ish bo'lmagani uchun bolalar uchun ham xavfsiz.</p>
+
+      <h2>8. Ushbu siyosatga o'zgartirishlar</h2>
+      <p>Siyosat yangilansa, ushbu sahifadagi "Kuchga kirgan sana" o'zgartiriladi. Muhim o'zgarishlar haqida ilova ichida xabar berishga harakat qilamiz.</p>
+
+      <h2>9. Bog'lanish</h2>
+      <p>Savollar bo'lsa: <strong><a href="mailto:uzseven.uz@gmail.com">uzseven.uz@gmail.com</a></strong></p>
+    </section>
+
+    <p class="outro">Bu ilova musulmonlarga kundalik ibodatlarida yordam berish uchun yaratilgan. Ma'lumotingiz — bu sizning va Yaratganning o'rtangizdagi ish; biz unga aralashmaymiz.</p>
+
+    <footer>
+      &copy; 2026 Zikr &middot; com.zikrapp.zikr_app
+    </footer>
+  </div>
+</body>
+</html>
