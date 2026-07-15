@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maxfiylik siyosati — Hisobchim</title>
+  <meta name="description" content="Hisobchim — shaxsiy moliya ilovasi maxfiylik siyosati / Privacy Policy" />
+  <style>
+    :root {
+      --bg: #f6f5f1;
+      --card: #ffffff;
+      --ink: #26332b;
+      --muted: #5f6f64;
+      --accent: #2f6b4f;
+      --border: #e4e6e1;
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.75;
+      font-size: 17px;
+    }
+    .wrap { max-width: 760px; margin: 0 auto; padding: 32px 20px 80px; }
+    header { text-align: center; padding: 40px 0 28px; border-bottom: 1px solid var(--border); margin-bottom: 8px; }
+    header .app { display: inline-block; font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); font-weight: 700; margin-bottom: 10px; }
+    h1 { font-size: 30px; line-height: 1.25; margin: 0 0 12px; color: var(--ink); }
+    .meta { color: var(--muted); font-size: 15px; margin: 4px 0; }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 8px 30px 30px; margin-top: 26px; box-shadow: 0 1px 2px rgba(0,0,0,0.03); }
+    h2 { font-size: 20px; margin: 30px 0 10px; padding-bottom: 8px; border-bottom: 1px solid var(--border); color: var(--accent); }
+    h2:first-of-type { margin-top: 8px; }
+    p { margin: 14px 0; }
+    ul { margin: 14px 0; padding-left: 22px; }
+    li { margin: 8px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 14px 0; }
+    th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); font-size: 15px; }
+    th { color: var(--muted); font-weight: 600; }
+    strong { color: var(--ink); font-weight: 700; }
+    a { color: var(--accent); }
+    .lang-tag { display: inline-block; background: var(--accent); color: #fff; font-size: 13px; font-weight: 700; letter-spacing: 0.06em; padding: 4px 12px; border-radius: 20px; margin-top: 6px; }
+    footer { text-align: center; color: var(--muted); font-size: 14px; margin-top: 36px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <span class="app">Hisobchim — shaxsiy moliya</span>
+      <h1>Maxfiylik siyosati</h1>
+      <p class="meta"><strong>Oxirgi yangilanish:</strong> 2026-yil 5-iyun</p>
+      <p class="meta"><strong>Ilova:</strong> Hisobchim (<code>com.sevenuz.hisobchim</code>)</p>
+    </header>
+
+    <section class="card">
+      <span class="lang-tag">O'zbekcha</span>
+
+      <h2>1. Umumiy ma'lumot</h2>
+      <p>Hisobchim (keyingi o'rinlarda — "ilova") shaxsiy moliyani boshqarish uchun mobil ilova. Ilova foydalanuvchining daromad va xarajatlarini hisobga olish imkonini beradi. Mazkur siyosat ilova qanday ma'lumot to'plashi va ulardan qanday foydalanishini tushuntiradi.</p>
+
+      <h2>2. To'planadigan ma'lumotlar</h2>
+      <p>Ilova <strong>shaxsiy ma'lumotlaringizni serverga yubormaydi va to'plamaydi</strong>. Quyidagilar faqat sizning qurilmangizda lokal saqlanadi:</p>
+      <ul>
+        <li>Hisoblar (nomi, balans, valyuta)</li>
+        <li>Toifalar (nomi, ikonka, rang)</li>
+        <li>Tranzaksiyalar (summa, sana, izoh, toifa va hisob bog'lanmasi)</li>
+        <li>Byudjetlar (toifa bo'yicha oylik limit)</li>
+        <li>Takroriy tranzaksiyalar (shablonlar)</li>
+        <li>Sozlamalar (mavzu, asosiy valyuta)</li>
+        <li>PIN kod (SHA-256 algoritmi bilan hashlangan ko'rinishda)</li>
+      </ul>
+
+      <h2>3. Ma'lumotlar qayerda saqlanadi</h2>
+      <p>Barcha ma'lumotlar qurilmangizdagi <strong>lokal SQLite ma'lumotlar bazasi</strong> va <code>SharedPreferences</code> xotirasida saqlanadi. Hech qanday cloud yoki tashqi server foydalanilmaydi.</p>
+
+      <h2>4. Tarmoq va tashqi xizmatlar</h2>
+      <p>Ilova internet ulanishini talab qilmaydi. Faqat quyidagi holatlarda tizim funksiyalari ishga tushadi:</p>
+      <ul>
+        <li><strong>Ulashish (Share)</strong> — eksport faylini boshqa ilovalarga uzatish uchun Android tizim oynasidan foydalanadi.</li>
+        <li><strong>Bildirishnomalar</strong> — eslatma uchun lokal notification (Google serveri ishlatilmaydi).</li>
+      </ul>
+
+      <h2>5. Ruxsatlar (Permissions)</h2>
+      <table>
+        <tr><th>Ruxsat</th><th>Maqsadi</th></tr>
+        <tr><td><code>POST_NOTIFICATIONS</code></td><td>Kunlik eslatma uchun</td></tr>
+        <tr><td><code>RECEIVE_BOOT_COMPLETED</code></td><td>Qurilma yoqilgandan keyin eslatmani qayta belgilash</td></tr>
+        <tr><td><code>SCHEDULE_EXACT_ALARM</code></td><td>Eslatmani aniq vaqtda jo'natish</td></tr>
+        <tr><td><code>VIBRATE</code></td><td>Bildirishnomalar uchun</td></tr>
+        <tr><td><code>INTERNET</code></td><td>Faqat tizim uchun (ilova aslida tarmoqqa ulanmaydi)</td></tr>
+      </table>
+
+      <h2>6. Ma'lumotlarni eksport va o'chirish</h2>
+      <p>Foydalanuvchi istalgan vaqtda ma'lumotlarini <strong>JSON</strong> yoki <strong>CSV</strong> formatida eksport qilishi mumkin. Ma'lumotlarni butunlay o'chirish uchun ilovani o'chirib tashlash kifoya — barcha ma'lumotlar qurilma xotirasidan yo'qoladi.</p>
+
+      <h2>7. Bolalar maxfiyligi</h2>
+      <p>Ilova 13 yoshgacha bo'lgan bolalardan biron-bir ma'lumot to'plamaydi.</p>
+
+      <h2>8. Uchinchi tomon</h2>
+      <p>Ilova reklama, analitika yoki uchinchi tomon SDK'larini ishlatmaydi (faqat ochiq kodli kutubxonalardan foydalanadi: Flutter, SQLite, va boshqalar).</p>
+
+      <h2>9. Bog'lanish</h2>
+      <p>Savollar yoki shikoyatlar uchun: <a href="mailto:uzseven.uz@gmail.com">uzseven.uz@gmail.com</a></p>
+    </section>
+
+    <section class="card">
+      <span class="lang-tag">English</span>
+
+      <h2>1. Overview</h2>
+      <p>Hisobchim ("the app") is a personal finance management mobile application. It lets users record income and expenses. This policy explains what data the app processes and how.</p>
+
+      <h2>2. Data we process</h2>
+      <p>The app <strong>does not transmit or collect any personal data on a server</strong>. The following items are stored <strong>locally on your device only</strong>:</p>
+      <ul>
+        <li>Accounts (name, balance, currency)</li>
+        <li>Categories (name, icon, color)</li>
+        <li>Transactions (amount, date, note, category and account link)</li>
+        <li>Budgets (monthly limit per category)</li>
+        <li>Recurring transactions (templates)</li>
+        <li>Settings (theme, default currency)</li>
+        <li>PIN code (stored as a SHA-256 hash, never as plain text)</li>
+      </ul>
+
+      <h2>3. Where data is stored</h2>
+      <p>All data is stored in a <strong>local SQLite database</strong> and <code>SharedPreferences</code> on your device. The app uses no cloud or remote storage.</p>
+
+      <h2>4. Network and external services</h2>
+      <p>The app does not require an internet connection. The following operating-system features may be invoked on demand:</p>
+      <ul>
+        <li><strong>Share sheet</strong> — for exporting data to other apps via Android's system share dialog.</li>
+        <li><strong>Local notifications</strong> — for the daily reminder (no Google/push servers involved).</li>
+      </ul>
+
+      <h2>5. Permissions</h2>
+      <table>
+        <tr><th>Permission</th><th>Purpose</th></tr>
+        <tr><td><code>POST_NOTIFICATIONS</code></td><td>Daily reminder</td></tr>
+        <tr><td><code>RECEIVE_BOOT_COMPLETED</code></td><td>Reschedule reminder after device reboot</td></tr>
+        <tr><td><code>SCHEDULE_EXACT_ALARM</code></td><td>Trigger reminder at the chosen time</td></tr>
+        <tr><td><code>VIBRATE</code></td><td>Notification feedback</td></tr>
+        <tr><td><code>INTERNET</code></td><td>System-only (the app does not actually use the network)</td></tr>
+      </table>
+
+      <h2>6. Export and deletion</h2>
+      <p>You can export your data at any time as <strong>JSON</strong> or <strong>CSV</strong>. To delete all data, simply uninstall the app — all records are removed from device storage.</p>
+
+      <h2>7. Children's privacy</h2>
+      <p>The app does not knowingly collect any data from children under 13.</p>
+
+      <h2>8. Third parties</h2>
+      <p>The app contains no ads, no analytics, and no third-party tracking SDKs. It relies only on open-source libraries (Flutter, SQLite, etc.).</p>
+
+      <h2>9. Contact</h2>
+      <p>Questions or concerns: <a href="mailto:uzseven.uz@gmail.com">uzseven.uz@gmail.com</a></p>
+    </section>
+
+    <footer>
+      &copy; 2026 Hisobchim &middot; com.sevenuz.hisobchim
+    </footer>
+  </div>
+</body>
+</html>
