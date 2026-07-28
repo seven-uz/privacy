@@ -1,136 +1,261 @@
 <!DOCTYPE html>
-<html lang="uz">
+<html lang="uz" data-lang="uz">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Maxfiylik siyosati — Hisobchim</title>
-  <meta name="description" content="Hisobchim — shaxsiy moliya ilovasi maxfiylik siyosati / Privacy Policy" />
+  <title>Maxfiylik siyosati — Hisobchim | seven-uz</title>
+  <meta name="description" content="Hisobchim (com.sevenuz.hisobchim) — maxfiylik siyosati / Политика конфиденциальности / Privacy Policy" />
+  <meta name="robots" content="index, follow" />
   <link rel="icon" href="data:," />
   <link rel="stylesheet" href="/assets/style.css" />
-  <script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+  <script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);var q=(location.search.match(/[?&]lang=(uz|ru|en)/)||[])[1]||(location.hash.match(/^#(uz|ru|en)$/)||[])[1]||localStorage.getItem('lang');if(q)document.documentElement.setAttribute('data-lang',q);}catch(e){}})();</script>
 </head>
 <body>
   <div class="topbar">
-    <a class="back" href="/">&larr; seven-uz &middot; Maxfiylik siyosatlari</a>
-    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Mavzuni almashtirish">
-      <span class="i-sun" aria-hidden="true">&#9728;&#65039;</span>
-      <span class="i-moon" aria-hidden="true">&#9789;</span>
-    </button>
+    <a class="back" href="/">&larr; seven-uz</a>
+    <div class="tb-right">
+      <div class="lang-switch" role="group" aria-label="Til / Язык / Language">
+        <button type="button" data-setlang="uz">UZ</button>
+        <button type="button" data-setlang="ru">RU</button>
+        <button type="button" data-setlang="en">EN</button>
+      </div>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Mavzuni almashtirish">
+        <span class="i-sun" aria-hidden="true">&#9728;&#65039;</span>
+        <span class="i-moon" aria-hidden="true">&#9789;</span>
+      </button>
+    </div>
   </div>
   <div class="wrap">
     <header>
-      <span class="app">Hisobchim — shaxsiy moliya</span>
-      <h1>Maxfiylik siyosati</h1>
-      <p class="meta"><strong>Oxirgi yangilanish:</strong> 2026-yil 8-iyun</p>
-      <p class="meta"><strong>Ilova:</strong> Hisobchim (<code>com.sevenuz.hisobchim</code>)</p>
+      <span class="app"><span class="l l-uz">Shaxsiy moliya — daromad va xarajat</span><span class="l l-ru">Личные финансы — доходы и расходы</span><span class="l l-en">Personal finance — income and expenses</span></span>
+      <h1><span class="l l-uz">Maxfiylik siyosati</span><span class="l l-ru">Политика конфиденциальности</span><span class="l l-en">Privacy Policy</span></h1>
+      <p class="meta"><strong>Hisobchim</strong></p>
+      <p class="meta"><span class="l l-uz">Ilova identifikatori</span><span class="l l-ru">Идентификатор приложения</span><span class="l l-en">Application ID</span>: <code>com.sevenuz.hisobchim</code></p>
+      <p class="meta"><span class="l l-uz">Oxirgi yangilanish: 2026-yil 22-iyul</span><span class="l l-ru">Последнее обновление: 22 июля 2026 г.</span><span class="l l-en">Last updated: July 22, 2026</span></p>
     </header>
 
-    <section class="card">
+    <section class="card l l-uz" lang="uz">
       <span class="lang-tag">O'zbekcha</span>
-
       <h2>1. Umumiy ma'lumot</h2>
-      <p>Hisobchim (keyingi o'rinlarda — "ilova") shaxsiy moliyani boshqarish uchun mobil ilova. Ilova foydalanuvchining daromad va xarajatlarini hisobga olish imkonini beradi. Mazkur siyosat ilova qanday ma'lumot to'plashi va ulardan qanday foydalanishini tushuntiradi.</p>
-
-      <h2>2. To'planadigan ma'lumotlar</h2>
-      <p>Ilova <strong>shaxsiy ma'lumotlaringizni serverga yubormaydi va to'plamaydi</strong>. Quyidagilar faqat sizning qurilmangizda lokal saqlanadi:</p>
+      <p>Hisobchim — shaxsiy moliyani boshqarish uchun mobil ilova: daromad va xarajatlarni hisobga olish, byudjet belgilash, qarzlarni yuritish va moliyaviy maqsadlarni kuzatish. Ilova <strong>oflayn ishlaydi</strong> va standart holatda moliyaviy ma'lumotingiz qurilmangizdan chiqmaydi. Bitta <strong>ixtiyoriy</strong> istisno bor: agar siz «Google Drive'ga zaxira» funksiyasini <strong>o'zingiz yoqsangiz</strong>, zaxira nusxa <strong>sizning shaxsiy Google Drive'ingizga</strong> yoziladi. U bizga emas, <strong>sizning o'z bulut omboringizga</strong> boradi — bizda uning nusxasi bo'lmaydi.</p>
+      <h2>2. Qanday ma'lumot to'planadi</h2>
+      <p>Quyidagilar <strong>faqat qurilmangizda</strong> saqlanadi:</p>
       <ul>
-        <li>Hisoblar (nomi, balans, valyuta)</li>
-        <li>Toifalar (nomi, ikonka, rang)</li>
-        <li>Tranzaksiyalar (summa, sana, izoh, toifa va hisob bog'lanmasi)</li>
-        <li>Byudjetlar (toifa bo'yicha oylik limit)</li>
-        <li>Takroriy tranzaksiyalar (shablonlar)</li>
-        <li>Sozlamalar (mavzu, asosiy valyuta)</li>
-        <li>PIN kod (SHA-256 algoritmi bilan hashlangan ko'rinishda)</li>
+        <li>hisoblar — nomi, boshlang'ich balans, valyuta</li>
+        <li>tranzaksiyalar — summa, sana, izoh, toifa va hisob bog'lanmasi</li>
+        <li>toifalar (nomi, ikonka, rang) va byudjetlar (toifa bo'yicha oylik limit)</li>
+        <li>moliyaviy maqsadlar va rejalashtirilgan/takroriy amallar (shablonlar)</li>
+        <li>qarz daftari — siz o'zingiz kiritgan kontakt nomi, ixtiyoriy telefon raqami, qarz summasi va to'lovlar (telefon kitobingizdan hech narsa o'qilmaydi)</li>
+        <li>PIN kod — faqat SHA-256 hash ko'rinishida (asl PIN saqlanmaydi)</li>
+        <li>ilova sozlamalari — til, mavzu (light/dark), eslatma vaqti, maqsad qiymatlari</li>
       </ul>
-
-      <h2>3. Ma'lumotlar qayerda saqlanadi</h2>
-      <p>Barcha ma'lumotlar qurilmangizdagi <strong>lokal SQLite ma'lumotlar bazasi</strong> va <code>SharedPreferences</code> xotirasida saqlanadi. Hech qanday cloud yoki tashqi server foydalanilmaydi.</p>
-
-      <h2>4. Tarmoq va tashqi xizmatlar</h2>
+      <p>Ilova quyidagilarni <strong>umuman to'plamaydi</strong>: manzil, kontaktlar ro'yxati, qo'ng'iroqlar/SMS, joylashuv, qurilma identifikatori (IMEI, reklama ID), to'lov kartasi rekvizitlari yoki ilovadan tashqaridagi faoliyatingiz. Google hisobingiz bilan kirganingizda ilova <strong>faqat e-pochta manzilingizni</strong> ko'radi va uni ekranda «qaysi hisobga zaxira qilinmoqda» deb ko'rsatish uchun ishlatadi — bu manzil <strong>qurilmangizda qoladi</strong> va bizga yuborilmaydi.</p>
+      <h2>3. Ma'lumot qayerda saqlanadi</h2>
+      <p>Barcha yozuvlar qurilmangizdagi <strong>lokal SQLite ma'lumotlar bazasi</strong>da va sozlamalar <code>SharedPreferences</code>da saqlanadi — ilovaning xususiy (sandbox) sohasida. Bizning serverimiz <strong>umuman yo'q</strong>: moliyaviy ma'lumotingiz hech qachon bizga yuborilmaydi.<br><br>Agar siz Google Drive zaxirasini yoqsangiz, qo'shimcha ravishda <strong>bitta <code>hisobchim_backup.json</code> fayli sizning shaxsiy Google Drive'ingizda</strong> saqlanadi. U yerdagi fayl <strong>sizga tegishli</strong> — uni istalgan vaqtda Drive'dan o'chirib tashlashingiz mumkin. Har zaxirada shu yagona fayl ustiga yoziladi (yangi nusxalar to'planib qolmaydi).</p>
+      <h2>4. Ma'lumot nima uchun ishlatiladi</h2>
+      <p>To'plangan ma'lumot faqat quyidagi maqsadlarda ishlatiladi:</p>
       <ul>
-        <li><strong>Ulashish (Share)</strong> — eksport faylini boshqa ilovalarga uzatish uchun Android tizim oynasidan foydalanadi.</li>
-        <li><strong>Bildirishnomalar</strong> — eslatma uchun lokal notification (Google serveri ishlatilmaydi).</li>
-        <li><strong>Valyuta kurslari</strong> — ilova kunlik valyuta kurslarini ochiq uchinchi tomon API'sidan (<code>open.er-api.com</code>) oladi. Faqat ochiq kurs ma'lumotlari olinadi; hech qanday shaxsiy yoki moliyaviy ma'lumot yuborilmaydi. Bu ixtiyoriy — internetsiz ilova zaxira kurslar bilan ishlaydi.</li>
+        <li>ilovaning asosiy vazifasini bajarish — siz kiritgan yozuvlarni saqlash va ko'rsatish;</li>
+        <li>statistika, grafik va tendensiyalarni <strong>qurilmangizning o'zida</strong> hisoblash;</li>
+        <li>siz belgilagan vaqtda lokal eslatma ko'rsatish;</li>
+        <li>siz so'raganingizda ma'lumotni fayl (PDF/CSV) ko'rinishida eksport qilish;</li>
+        <li>tanlagan sozlamalaringizni eslab qolish.</li>
       </ul>
-
-      <h2>5. Ruxsatlar (Permissions)</h2>
+      <h2>5. Ma'lumot kim bilan ulashiladi</h2>
+      <p>Ilova sizning moliyaviy ma'lumotingizni <strong>bizga bermaydi</strong> — bizda server yo'q. Reklama tarmoqlari, analitika xizmatlari yoki boshqa uchinchi tomon kompaniyalari bilan ham ulashilmaydi, sotilmaydi.<br><br>Yagona uchinchi tomon — <strong>Google LLC</strong>, va faqat <strong>siz o'zingiz yoqqan holatda</strong>: (a) <strong>Google Sign-In</strong> orqali qaysi hisob bilan kirayotganingiz tasdiqlanadi; (b) <strong>Google Drive</strong> zaxira faylini <em>sizning o'z omboringizda</em> saqlaydi. Bunda Google siz uchun <strong>ombor provayderi</strong> vazifasini bajaradi — fayl sizniki, unga Google'ning <a href="https://policies.google.com/privacy" rel="noopener">maxfiylik siyosati</a> va Drive shartlari amal qiladi. Funksiyani yoqmasangiz, Google bilan hech qanday aloqa bo'lmaydi.<br><br>Ikkinchi (shaxssiz) istisno — «Ulashish»/«Eksport» tugmasini <strong>o'zingiz</strong> bosganingizda faylni tanlagan ilovangizga uzatishingiz; bu holatda ma'lumot qayerga borishini siz belgilaysiz.</p>
+      <p>Ilovada <strong>reklama yo'q</strong>, <strong>analitika/kuzatuv SDK'lari yo'q</strong> (Firebase Analytics, Google AdMob, Facebook SDK va shu kabilar ishlatilmaydi) va foydalanuvchi profilini tuzish yoki uni uchinchi tomonga sotish amalga oshirilmaydi.</p>
+      <h2>6. Tarmoq va tashqi xizmatlar</h2>
+      <p>Ilova quyidagi tashqi xizmatlar bilan bog'lanadi:</p>
+      <ul>
+        <li><code>open.er-api.com</code> — kunlik valyuta kurslarini olish uchun ochiq API. Faqat kurs so'raladi — hisoblaringiz, summalaringiz yoki boshqa shaxsiy ma'lumotingiz <strong>yuborilmaydi</strong>. Internet bo'lmasa ilova ichki zaxira kurslar bilan ishlaydi.</li>
+        <li><code>accounts.google.com</code> — <strong>Google Sign-In</strong> — faqat siz «Google Drive'ga zaxira» funksiyasini yoqsangiz. Qaysi Google hisobi bilan kirishingiz tasdiqlanadi; ilova javob sifatida e-pochta manzilingizni va vaqtinchalik dostup tokenini oladi. <strong>Moliyaviy ma'lumotingiz bu bosqichda umuman uzatilmaydi.</strong></li>
+        <li><code>www.googleapis.com/drive/v3</code> — <strong>Google Drive API</strong> — faqat siz zaxirani yoqsangiz. Ilova <strong>sizning o'z Drive'ingizga</strong> bitta <code>hisobchim_backup.json</code> faylini yozadi (va tiklashda o'qiydi). Faylda siz kiritgan hisoblar, tranzaksiyalar, toifalar, byudjetlar, maqsadlar va qarz yozuvlari bo'ladi. Ruxsat doirasi <code>drive.file</code> — ilova <strong>faqat o'zi yaratgan shu faylni</strong> ko'radi, Drive'ingizdagi boshqa narsalarni emas. Bu fayl <strong>bizga yuborilmaydi</strong>.</li>
+      </ul>
+      <p><strong>Google Drive zaxirasi — ixtiyoriy va standart holatda O'CHIQ.</strong> U faqat siz «Ma'lumot» ekranida «Google hisobiga kirish» tugmasini bosganingizdan keyin ishlaydi. Ulanmagan holda ilova hech qachon Google'ga murojaat qilmaydi va moliyaviy ma'lumotingiz qurilmangizdan chiqmaydi. Istalgan vaqtda ilova ichidan «Chiqish» tugmasi bilan uzilishingiz mumkin.</p>
+      <p><strong>Nima uchun <code>drive.file</code>?</strong> Bu Google'ning eng tor ruxsat doirasi va u <em>sezgir (sensitive)</em> deb hisoblanmaydi. Ya'ni ilova Drive'ingizni «ko'ra olmaydi» — u faqat o'zi yaratgan bitta zaxira faylni biladi. Biz ataylab shu eng cheklangan variantni tanladik.</p>
+      <h2>7. Ruxsatlar (Permissions)</h2>
       <table>
-        <tr><th>Ruxsat</th><th>Maqsadi</th></tr>
-        <tr><td><code>POST_NOTIFICATIONS</code></td><td>Kunlik eslatma uchun</td></tr>
-        <tr><td><code>RECEIVE_BOOT_COMPLETED</code></td><td>Qurilma yoqilgandan keyin eslatmani qayta belgilash</td></tr>
-        <tr><td><code>SCHEDULE_EXACT_ALARM</code></td><td>Eslatmani aniq vaqtda jo'natish</td></tr>
-        <tr><td><code>VIBRATE</code></td><td>Bildirishnomalar uchun</td></tr>
-        <tr><td><code>INTERNET</code></td><td>Valyuta kurslarini olish uchun (shaxsiy ma'lumot yuborilmaydi)</td></tr>
+        <tr><th>Ruxsat</th><th>Nima uchun</th></tr>
+        <tr><td><code>INTERNET</code><br><span class="pl">Internet</span></td><td>Quyida sanab o'tilgan tashqi xizmatlarga ulanish uchun</td></tr>
+        <tr><td><code>USE_BIOMETRIC</code><br><span class="pl">Biometrika</span></td><td>Ilovani barmoq izi/yuz bilan qulflash (ma'lumot Android tizimida qoladi)</td></tr>
+        <tr><td><code>POST_NOTIFICATIONS</code><br><span class="pl">Bildirishnomalar</span></td><td>Eslatma va bildirishnomalarni ko'rsatish</td></tr>
+        <tr><td><code>SCHEDULE_EXACT_ALARM</code><br><span class="pl">Aniq vaqtli signal</span></td><td>Eslatmani belgilangan aniq vaqtda ishga tushirish</td></tr>
+        <tr><td><code>RECEIVE_BOOT_COMPLETED</code><br><span class="pl">Yuklanish signali</span></td><td>Qurilma qayta yoqilgandan keyin eslatmalarni tiklash</td></tr>
+        <tr><td><code>VIBRATE</code><br><span class="pl">Tebranish</span></td><td>Bildirishnoma paytida tebranish signali</td></tr>
       </table>
-
-      <h2>6. Ma'lumotlarni eksport va o'chirish</h2>
-      <p>Foydalanuvchi istalgan vaqtda ma'lumotlarini <strong>JSON</strong> yoki <strong>CSV</strong> formatida eksport qilishi mumkin. Ma'lumotlarni butunlay o'chirish uchun ilovani o'chirib tashlash kifoya — barcha ma'lumotlar qurilma xotirasidan yo'qoladi.</p>
-
-      <h2>7. Bolalar maxfiyligi</h2>
-      <p>Ilova 13 yoshgacha bo'lgan bolalardan biron-bir ma'lumot to'plamaydi.</p>
-
-      <h2>8. Uchinchi tomon</h2>
-      <p>Ilova reklama, analitika yoki uchinchi tomon SDK'larini ishlatmaydi (faqat ochiq kodli kutubxonalardan foydalanadi: Flutter, SQLite, va boshqalar).</p>
-
-      <h2>9. Bog'lanish</h2>
-      <p>Savollar yoki shikoyatlar uchun: <a href="mailto:uzseven.uz@gmail.com">uzseven.uz@gmail.com</a></p>
+      <h2>8. Ma'lumot qancha saqlanadi</h2>
+      <p>Qurilmadagi ma'lumot siz o'chirmaguningizcha turadi: ilovani o'chirib tashlasangiz yoki Android sozlamalarida «Ma'lumotlarni tozalash» tugmasini bossangiz, butunlay yo'qoladi. <strong>Bizda hech qanday nusxa qolmaydi</strong>, chunki bizga hech narsa yuborilmaydi.<br><br>Google Drive'dagi zaxira fayl <strong>sizning nazoratingizda</strong> — u siz o'chirmaguningizcha turadi. O'chirganingizdan keyin Google uni Savatchada (Trash) <strong>30 kun</strong> ushlab turadi va so'ng butunlay yo'q qiladi (Google qoidasi). Ilovaning Google hisobingizga dostupini <a href="https://myaccount.google.com/permissions" rel="noopener">myaccount.google.com/permissions</a> sahifasida istalgan vaqtda bekor qilishingiz mumkin.</p>
+      <h2>9. Sizning huquqlaringiz</h2>
+      <p>Ma'lumotlaringiz sizda bo'lgani uchun ular ustidan to'liq nazorat sizda:</p>
+      <ul>
+        <li>istalgan yozuvni ilova ichida ko'rish, tahrirlash va o'chirish;</li>
+        <li>barcha ma'lumotni bir yo'la o'chirish — ilovani o'chirib tashlash yoki Android sozlamalarida «Ma'lumotlarni tozalash»;</li>
+        <li>Google Drive zaxirasini o'chirish va ilovaning Google hisobingizga dostupini bekor qilish — batafsil qadamlar: <a href="/delete/hisobchim/">privacy.sevenuz.uz/delete/hisobchim/</a>;</li>
+        <li>savol yoki shikoyat bilan biz bilan bog'lanish.</li>
+      </ul>
+      <h2>10. Xavfsizlik</h2>
+      <p>Ma'lumotlar qurilmangizning ilovaga ajratilgan xususiy sohasida (app sandbox) saqlanadi — boshqa ilovalar ularni o'qiy olmaydi; ilovani PIN/barmoq izi bilan qulflash mumkin. Bizning serverimiz bo'lmagani uchun <strong>bizning tomonda sizdirish xavfi mavjud emas</strong>.<br><br>Google Drive bilan aloqa <strong>HTTPS/TLS</strong> orqali shifrlangan. Ilova <strong><code>drive.file</code></strong> deb ataladigan eng tor ruxsat doirasini so'raydi: u ilovaga <strong>faqat o'zi yaratgan faylni</strong> ko'rish imkonini beradi — Drive'ingizdagi boshqa hujjatlar, rasmlar yoki papkalarni ilova <strong>ko'ra olmaydi</strong>. Ilovada Google parolingiz saqlanmaydi; avtorizatsiya Android tizimi va Google tomonidan bajariladi.</p>
+      <h2>11. Bolalar maxfiyligi</h2>
+      <p>Ilova 13 yoshgacha bo'lgan bolalarga maxsus mo'ljallanmagan va ulardan ataylab hech qanday shaxsiy ma'lumot to'plamaydi. Agar bola ilovadan foydalansa, unga ota-ona nazorati tavsiya etiladi.</p>
+      <h2>12. Siyosatdagi o'zgarishlar</h2>
+      <p>Ushbu siyosat ilova funksiyalari o'zgarganda yangilanishi mumkin. Har qanday o'zgarish shu sahifada e'lon qilinadi va yuqoridagi «Oxirgi yangilanish» sanasi yangilanadi. Muhim o'zgarishlar haqida ilova ichida ham xabar beriladi.</p>
+      <h2>13. Bog'lanish</h2>
+      <p>Maxfiylik bo'yicha har qanday savol, ma'lumotni o'chirish so'rovi yoki shikoyat uchun quyidagi manzilga yozing. Odatda 7 ish kuni ichida javob beramiz.</p>
+      <p><strong>E-mail:</strong> <a href="mailto:uzseven.uz@gmail.com">uzseven.uz@gmail.com</a><br>
+      <strong>Ishlab chiquvchi:</strong> seven-uz (Zohid Juraev), O'zbekiston</p>
+      <p class="legal-note">Ushbu siyosat O'zbekiston Respublikasining «Shaxsga doir ma'lumotlar to'g'risida»gi qonuni, Google Play Developer Program Policy («User Data» va «Data safety» talablari) hamda GDPR tamoyillariga muvofiq tayyorlangan.</p>
     </section>
 
-    <section class="card">
+    <section class="card l l-ru" lang="ru">
+      <span class="lang-tag">Русский</span>
+      <h2>1. Общие сведения</h2>
+      <p>Hisobchim — мобильное приложение для управления личными финансами: учёт доходов и расходов, бюджеты, долги и финансовые цели. Приложение <strong>работает офлайн</strong>, и по умолчанию ваши финансовые данные не покидают устройство. Есть одно <strong>необязательное</strong> исключение: если вы <strong>сами включите</strong> функцию «Резервная копия в Google Drive», копия запишется <strong>в ваш личный Google Drive</strong>. Она попадает не к нам, а <strong>в ваше собственное облако</strong> — у нас её копии не остаётся.</p>
+      <h2>2. Какие данные собираются</h2>
+      <p>Перечисленное ниже хранится <strong>только на вашем устройстве</strong>:</p>
+      <ul>
+        <li>счета — название, начальный баланс, валюта</li>
+        <li>транзакции — сумма, дата, заметка, привязка к категории и счёту</li>
+        <li>категории (название, иконка, цвет) и бюджеты (месячный лимит по категории)</li>
+        <li>финансовые цели и запланированные/повторяющиеся операции (шаблоны)</li>
+        <li>долговая книга — введённое вами имя контакта, необязательный телефон, сумма долга и платежи (телефонная книга не читается)</li>
+        <li>PIN-код — только в виде SHA-256 хеша (сам PIN не хранится)</li>
+        <li>настройки приложения — язык, тема (светлая/тёмная), время напоминания, целевые значения</li>
+      </ul>
+      <p>Приложение <strong>вообще не собирает</strong>: адрес, список контактов, звонки/SMS, местоположение, идентификаторы устройства (IMEI, рекламный ID), платёжные реквизиты или вашу активность вне приложения. При входе через Google приложение видит <strong>только ваш адрес e-mail</strong> и использует его, чтобы показать на экране, в какой аккаунт выполняется копирование — этот адрес <strong>остаётся на вашем устройстве</strong> и нам не передаётся.</p>
+      <h2>3. Где хранятся данные</h2>
+      <p>Все записи хранятся в <strong>локальной базе SQLite</strong> на вашем устройстве, настройки — в <code>SharedPreferences</code>, в приватной песочнице приложения. Нашего сервера <strong>не существует вовсе</strong>: ваши финансовые данные никогда не отправляются нам.<br><br>Если вы включите резервное копирование в Google Drive, дополнительно <strong>один файл <code>hisobchim_backup.json</code> будет храниться в вашем личном Google Drive</strong>. Этот файл <strong>принадлежит вам</strong> — вы можете удалить его из Drive в любой момент. При каждом копировании перезаписывается именно этот файл (копии не накапливаются).</p>
+      <h2>4. Для чего используются данные</h2>
+      <p>Собранные данные используются исключительно в следующих целях:</p>
+      <ul>
+        <li>выполнение основной функции приложения — сохранение и отображение введённых вами записей;</li>
+        <li>расчёт статистики, графиков и трендов <strong>непосредственно на вашем устройстве</strong>;</li>
+        <li>показ локального напоминания в заданное вами время;</li>
+        <li>экспорт данных в файл (PDF/CSV) по вашему запросу;</li>
+        <li>запоминание выбранных вами настроек.</li>
+      </ul>
+      <h2>5. Кому передаются данные</h2>
+      <p>Приложение <strong>не передаёт нам</strong> ваши финансовые данные — у нас нет сервера. Они также не передаются и не продаются рекламным сетям, аналитическим сервисам или иным третьим лицам.<br><br>Единственная третья сторона — <strong>Google LLC</strong>, и только <strong>если вы сами включили</strong> функцию: (а) через <strong>Google Sign-In</strong> подтверждается, под каким аккаунтом выполняется вход; (б) <strong>Google Drive</strong> хранит файл резервной копии <em>в вашем собственном хранилище</em>. Google выступает для вас <strong>поставщиком хранилища</strong> — файл принадлежит вам, к нему применяются <a href="https://policies.google.com/privacy" rel="noopener">политика конфиденциальности</a> Google и условия Drive. Если функция не включена, никакого взаимодействия с Google нет.<br><br>Второе (обезличенное) исключение — когда <strong>вы сами</strong> нажимаете «Поделиться»/«Экспорт» и отправляете файл в выбранное приложение; в этом случае вы сами решаете, куда попадут данные.</p>
+      <p>В приложении <strong>нет рекламы</strong> и <strong>нет SDK аналитики/трекинга</strong> (Firebase Analytics, Google AdMob, Facebook SDK и подобные не используются). Профилирование пользователя и продажа данных третьим лицам не осуществляются.</p>
+      <h2>6. Сеть и внешние сервисы</h2>
+      <p>Приложение обращается к следующим внешним сервисам:</p>
+      <ul>
+        <li><code>open.er-api.com</code> — открытый API для получения ежедневных курсов валют. Запрашивается только курс — ваши счета, суммы и любые персональные данные <strong>не передаются</strong>. Без интернета приложение работает со встроенными резервными курсами.</li>
+        <li><code>accounts.google.com</code> — <strong>Google Sign-In</strong> — только если вы включили функцию «Резервная копия в Google Drive». Подтверждается, под каким аккаунтом Google выполняется вход; в ответ приложение получает ваш e-mail и временный токен доступа. <strong>Ваши финансовые данные на этом шаге не передаются вовсе.</strong></li>
+        <li><code>www.googleapis.com/drive/v3</code> — <strong>Google Drive API</strong> — только если вы включили резервное копирование. Приложение записывает <strong>в ваш собственный Drive</strong> один файл <code>hisobchim_backup.json</code> (и читает его при восстановлении). В файле — введённые вами счета, транзакции, категории, бюджеты, цели и долговые записи. Область доступа — <code>drive.file</code>: приложение видит <strong>только этот созданный им файл</strong>, а не другое содержимое вашего Drive. Этот файл <strong>нам не передаётся</strong>.</li>
+      </ul>
+      <p><strong>Резервное копирование в Google Drive — необязательно и по умолчанию ВЫКЛЮЧЕНО.</strong> Оно работает только после того, как вы нажмёте «Войти через Google» на экране «Данные». Пока подключение не выполнено, приложение никогда не обращается к Google, и ваши финансовые данные не покидают устройство. Отключиться можно в любой момент кнопкой «Выйти» внутри приложения.</p>
+      <p><strong>Почему <code>drive.file</code>?</strong> Это самая узкая область доступа Google, и она не считается <em>чувствительной (sensitive)</em>. То есть приложение не «видит» ваш Drive — ему известен только один созданный им файл резервной копии. Мы намеренно выбрали самый ограниченный вариант.</p>
+      <h2>7. Разрешения (Permissions)</h2>
+      <table>
+        <tr><th>Разрешение</th><th>Для чего</th></tr>
+        <tr><td><code>INTERNET</code><br><span class="pl">Интернет</span></td><td>Для подключения к перечисленным ниже внешним сервисам</td></tr>
+        <tr><td><code>USE_BIOMETRIC</code><br><span class="pl">Биометрия</span></td><td>Блокировка приложения отпечатком/лицом (данные остаются в системе Android)</td></tr>
+        <tr><td><code>POST_NOTIFICATIONS</code><br><span class="pl">Уведомления</span></td><td>Показ напоминаний и уведомлений</td></tr>
+        <tr><td><code>SCHEDULE_EXACT_ALARM</code><br><span class="pl">Точный будильник</span></td><td>Запуск напоминания в точно указанное время</td></tr>
+        <tr><td><code>RECEIVE_BOOT_COMPLETED</code><br><span class="pl">Сигнал загрузки</span></td><td>Восстановление напоминаний после перезагрузки устройства</td></tr>
+        <tr><td><code>VIBRATE</code><br><span class="pl">Вибрация</span></td><td>Вибросигнал при уведомлении</td></tr>
+      </table>
+      <h2>8. Сколько хранятся данные</h2>
+      <p>Данные на устройстве хранятся, пока вы их не удалите: при удалении приложения или нажатии «Очистить данные» в настройках Android они исчезают полностью. <strong>У нас не остаётся никаких копий</strong>, поскольку нам ничего не передаётся.<br><br>Файл резервной копии в Google Drive <strong>под вашим контролем</strong> — он хранится, пока вы его не удалите. После удаления Google держит его в Корзине <strong>30 дней</strong>, затем стирает окончательно (правило Google). Доступ приложения к вашему Google-аккаунту можно отозвать в любой момент на странице <a href="https://myaccount.google.com/permissions" rel="noopener">myaccount.google.com/permissions</a>.</p>
+      <h2>9. Ваши права</h2>
+      <p>Поскольку данные находятся у вас, вы полностью ими управляете:</p>
+      <ul>
+        <li>просматривать, редактировать и удалять любую запись внутри приложения;</li>
+        <li>удалить все данные разом — удалив приложение или нажав «Очистить данные» в настройках Android;</li>
+        <li>удалить резервную копию в Google Drive и отозвать доступ приложения к вашему Google-аккаунту — подробные шаги: <a href="/delete/hisobchim/">privacy.sevenuz.uz/delete/hisobchim/</a>;</li>
+        <li>обратиться к нам с вопросом или жалобой.</li>
+      </ul>
+      <h2>10. Безопасность</h2>
+      <p>Данные хранятся в приватной песочнице приложения на вашем устройстве — другие приложения не могут их прочитать; приложение можно заблокировать PIN-кодом или отпечатком. Поскольку у нас нет сервера, <strong>риска утечки на нашей стороне не существует</strong>.<br><br>Обмен с Google Drive выполняется по шифрованному <strong>HTTPS/TLS</strong>. Приложение запрашивает самую узкую область доступа — <strong><code>drive.file</code></strong>: она позволяет видеть <strong>только созданный самим приложением файл</strong>; другие документы, фотографии и папки на вашем Drive приложение <strong>не видит</strong>. Пароль Google в приложении не хранится; авторизацию выполняют система Android и Google.</p>
+      <h2>11. Конфиденциальность детей</h2>
+      <p>Приложение не предназначено специально для детей младше 13 лет и намеренно не собирает от них персональные данные. Если приложением пользуется ребёнок, рекомендуется родительский контроль.</p>
+      <h2>12. Изменения политики</h2>
+      <p>Настоящая политика может обновляться при изменении функций приложения. Любые изменения публикуются на этой странице с обновлением даты «Последнее обновление». О существенных изменениях мы также сообщаем внутри приложения.</p>
+      <h2>13. Контакты</h2>
+      <p>По любым вопросам конфиденциальности, запросам на удаление данных или жалобам пишите на адрес ниже. Обычно мы отвечаем в течение 7 рабочих дней.</p>
+      <p><strong>E-mail:</strong> <a href="mailto:uzseven.uz@gmail.com">uzseven.uz@gmail.com</a><br>
+      <strong>Разработчик:</strong> seven-uz (Zohid Juraev), Узбекистан</p>
+      <p class="legal-note">Настоящая политика подготовлена в соответствии с законом Республики Узбекистан «О персональных данных», Google Play Developer Program Policy (требования «User Data» и «Data safety») и принципами GDPR.</p>
+    </section>
+
+    <section class="card l l-en" lang="en">
       <span class="lang-tag">English</span>
-
       <h2>1. Overview</h2>
-      <p>Hisobchim ("the app") is a personal finance management mobile application. It lets users record income and expenses. This policy explains what data the app processes and how.</p>
-
-      <h2>2. Data we process</h2>
-      <p>The app <strong>does not transmit or collect any personal data on a server</strong>. The following items are stored <strong>locally on your device only</strong>:</p>
+      <p>Hisobchim is a personal-finance app: tracking income and expenses, budgets, debts and financial goals. It <strong>works offline</strong> and by default your financial data never leaves your device. There is one <strong>optional</strong> exception: if <strong>you turn on</strong> the “Back up to Google Drive” feature, the backup is written to <strong>your own personal Google Drive</strong>. It goes to <strong>your</strong> cloud storage, not to us — we never receive a copy.</p>
+      <h2>2. What data is collected</h2>
+      <p>The following is stored <strong>only on your device</strong>:</p>
       <ul>
-        <li>Accounts (name, balance, currency)</li>
-        <li>Categories (name, icon, color)</li>
-        <li>Transactions (amount, date, note, category and account link)</li>
-        <li>Budgets (monthly limit per category)</li>
-        <li>Recurring transactions (templates)</li>
-        <li>Settings (theme, default currency)</li>
-        <li>PIN code (stored as a SHA-256 hash, never as plain text)</li>
+        <li>accounts — name, opening balance, currency</li>
+        <li>transactions — amount, date, note, category and account link</li>
+        <li>categories (name, icon, colour) and budgets (monthly limit per category)</li>
+        <li>financial goals and planned/recurring operations (templates)</li>
+        <li>debt book — the contact name you type, an optional phone number, debt amount and payments (your phone's contact list is never read)</li>
+        <li>PIN code — only as a SHA-256 hash (the PIN itself is never stored)</li>
+        <li>app settings — language, theme (light/dark), reminder time, target values</li>
       </ul>
-
+      <p>The app <strong>does not collect at all</strong>: your address, contact list, calls/SMS, location, device identifiers (IMEI, advertising ID), payment card details, or your activity outside the app. When you sign in with Google the app sees <strong>only your e-mail address</strong> and uses it to show which account the backup goes to — that address <strong>stays on your device</strong> and is never sent to us.</p>
       <h2>3. Where data is stored</h2>
-      <p>All data is stored in a <strong>local SQLite database</strong> and <code>SharedPreferences</code> on your device. The app uses no cloud or remote storage.</p>
-
-      <h2>4. Network and external services</h2>
+      <p>All records are stored in a <strong>local SQLite database</strong> on your device and settings in <code>SharedPreferences</code>, inside the app's private sandbox. We have <strong>no server at all</strong>: your financial data is never sent to us.<br><br>If you enable Google Drive backup, one additional file, <strong><code>hisobchim_backup.json</code>, is stored in your own personal Google Drive</strong>. That file <strong>belongs to you</strong> — you can delete it from Drive at any time. Each backup overwrites that same single file (copies do not pile up).</p>
+      <h2>4. Why the data is used</h2>
+      <p>The collected data is used only for the following purposes:</p>
       <ul>
-        <li><strong>Share sheet</strong> — for exporting data to other apps via Android's system share dialog.</li>
-        <li><strong>Local notifications</strong> — for the daily reminder (no Google/push servers involved).</li>
-        <li><strong>Currency exchange rates</strong> — the app fetches daily exchange rates from a public third-party API (<code>open.er-api.com</code>). Only public rate data is retrieved; no personal or financial information is ever sent. This is optional — the app works offline using built-in fallback rates.</li>
+        <li>performing the app's core function — storing and showing the records you enter;</li>
+        <li>computing statistics, charts and trends <strong>directly on your device</strong>;</li>
+        <li>showing a local reminder at the time you choose;</li>
+        <li>exporting your data to a file (PDF/CSV) when you request it;</li>
+        <li>remembering the settings you chose.</li>
       </ul>
-
-      <h2>5. Permissions</h2>
+      <h2>5. Who the data is shared with</h2>
+      <p>The app <strong>does not give us</strong> your financial data — we have no server. It is also never shared with or sold to ad networks, analytics services or any other third party.<br><br>The only third party is <strong>Google LLC</strong>, and only <strong>if you enable the feature</strong>: (a) <strong>Google Sign-In</strong> confirms which account you are signing in with; (b) <strong>Google Drive</strong> stores the backup file <em>in your own storage</em>. Google acts as <strong>your storage provider</strong> — the file is yours and is governed by Google's <a href="https://policies.google.com/privacy" rel="noopener">privacy policy</a> and Drive terms. If you never enable the feature, there is no interaction with Google at all.<br><br>The second (de-identified) exception is when <strong>you</strong> tap “Share”/“Export” and send a file to an app of your choice — then you decide where the data goes.</p>
+      <p>The app contains <strong>no advertising</strong> and <strong>no analytics/tracking SDKs</strong> (no Firebase Analytics, Google AdMob, Facebook SDK or similar). We do not profile users and never sell data to third parties.</p>
+      <h2>6. Network and third-party services</h2>
+      <p>The app connects to the following external services:</p>
+      <ul>
+        <li><code>open.er-api.com</code> — a public API for daily currency rates. Only the rate is requested — your accounts, amounts or any personal data are <strong>never sent</strong>. Offline, the app falls back to built-in rates.</li>
+        <li><code>accounts.google.com</code> — <strong>Google Sign-In</strong> — only if you enable “Back up to Google Drive”. It confirms which Google account you are signing in with; in return the app receives your e-mail address and a temporary access token. <strong>No financial data is transmitted at this step.</strong></li>
+        <li><code>www.googleapis.com/drive/v3</code> — <strong>Google Drive API</strong> — only if you enable backup. The app writes a single <code>hisobchim_backup.json</code> file <strong>to your own Drive</strong> (and reads it back when restoring). The file contains the accounts, transactions, categories, budgets, goals and debt records you entered. The scope is <code>drive.file</code> — the app sees <strong>only the file it created</strong>, nothing else in your Drive. This file is <strong>never sent to us</strong>.</li>
+      </ul>
+      <p><strong>Google Drive backup is optional and OFF by default.</strong> It only works after you tap “Sign in with Google” on the “Data” screen. Until you connect, the app never contacts Google and your financial data never leaves your device. You can disconnect at any time with the “Sign out” button inside the app.</p>
+      <p><strong>Why <code>drive.file</code>?</strong> It is Google's narrowest scope and is not classified as a <em>sensitive</em> scope. The app cannot “see” your Drive — it only knows the single backup file it created. We deliberately chose the most restricted option.</p>
+      <h2>7. Permissions</h2>
       <table>
         <tr><th>Permission</th><th>Purpose</th></tr>
-        <tr><td><code>POST_NOTIFICATIONS</code></td><td>Daily reminder</td></tr>
-        <tr><td><code>RECEIVE_BOOT_COMPLETED</code></td><td>Reschedule reminder after device reboot</td></tr>
-        <tr><td><code>SCHEDULE_EXACT_ALARM</code></td><td>Trigger reminder at the chosen time</td></tr>
-        <tr><td><code>VIBRATE</code></td><td>Notification feedback</td></tr>
-        <tr><td><code>INTERNET</code></td><td>Fetch live currency exchange rates (no personal data sent)</td></tr>
+        <tr><td><code>INTERNET</code><br><span class="pl">Internet</span></td><td>To connect to the external services listed below</td></tr>
+        <tr><td><code>USE_BIOMETRIC</code><br><span class="pl">Biometrika</span></td><td>Locking the app with fingerprint/face (data stays in the Android system)</td></tr>
+        <tr><td><code>POST_NOTIFICATIONS</code><br><span class="pl">Bildirishnomalar</span></td><td>Showing reminders and notifications</td></tr>
+        <tr><td><code>SCHEDULE_EXACT_ALARM</code><br><span class="pl">Aniq vaqtli signal</span></td><td>Firing a reminder at the exact chosen time</td></tr>
+        <tr><td><code>RECEIVE_BOOT_COMPLETED</code><br><span class="pl">Yuklanish signali</span></td><td>Restoring reminders after the device restarts</td></tr>
+        <tr><td><code>VIBRATE</code><br><span class="pl">Tebranish</span></td><td>Vibration feedback for notifications</td></tr>
       </table>
-
-      <h2>6. Export and deletion</h2>
-      <p>You can export your data at any time as <strong>JSON</strong> or <strong>CSV</strong>. To delete all data, simply uninstall the app — all records are removed from device storage.</p>
-
-      <h2>7. Children's privacy</h2>
-      <p>The app does not knowingly collect any data from children under 13.</p>
-
-      <h2>8. Third parties</h2>
-      <p>The app contains no ads, no analytics, and no third-party tracking SDKs. It relies only on open-source libraries (Flutter, SQLite, etc.).</p>
-
-      <h2>9. Contact</h2>
-      <p>Questions or concerns: <a href="mailto:uzseven.uz@gmail.com">uzseven.uz@gmail.com</a></p>
+      <h2>8. Data retention</h2>
+      <p>Data on the device stays until you delete it: uninstalling the app or tapping “Clear data” in Android settings removes it completely. <strong>We keep no copies</strong>, because nothing is ever sent to us.<br><br>The backup file in Google Drive is <strong>under your control</strong> — it stays until you delete it. After you delete it Google keeps it in Trash for <strong>30 days</strong>, then erases it permanently (Google's own rule). You can revoke the app's access to your Google account at any time at <a href="https://myaccount.google.com/permissions" rel="noopener">myaccount.google.com/permissions</a>.</p>
+      <h2>9. Your rights</h2>
+      <p>Because the data is yours and stays with you, you are in full control:</p>
+      <ul>
+        <li>view, edit and delete any record inside the app;</li>
+        <li>delete everything at once — uninstall the app or use “Clear data” in Android settings;</li>
+        <li>delete the Google Drive backup and revoke the app's access to your Google account — step-by-step: <a href="/delete/hisobchim/">privacy.sevenuz.uz/delete/hisobchim/</a>;</li>
+        <li>contact us with a question or complaint.</li>
+      </ul>
+      <h2>10. Security</h2>
+      <p>Data is stored in the app's private sandbox on your device — other apps cannot read it; the app can be locked with a PIN or fingerprint. Because we run no server, <strong>there is no breach risk on our side</strong>.<br><br>Communication with Google Drive uses encrypted <strong>HTTPS/TLS</strong>. The app requests the narrowest possible scope, <strong><code>drive.file</code></strong>: it lets the app see <strong>only the file it created itself</strong> — other documents, photos and folders in your Drive are <strong>invisible</strong> to the app. Your Google password is never stored in the app; authorisation is handled by the Android system and Google.</p>
+      <h2>11. Children's privacy</h2>
+      <p>The app is not directed at children under 13 and does not knowingly collect personal data from them. If a child uses the app, parental supervision is recommended.</p>
+      <h2>12. Changes to this policy</h2>
+      <p>This policy may be updated when the app's functionality changes. Any change is published on this page and the “Last updated” date above is revised. Significant changes are also announced inside the app.</p>
+      <h2>13. Contact</h2>
+      <p>For any privacy question, data-deletion request or complaint, write to the address below. We normally reply within 7 business days.</p>
+      <p><strong>E-mail:</strong> <a href="mailto:uzseven.uz@gmail.com">uzseven.uz@gmail.com</a><br>
+      <strong>Developer:</strong> seven-uz (Zohid Juraev), Uzbekistan</p>
+      <p class="legal-note">This policy is prepared in line with the Law of the Republic of Uzbekistan “On Personal Data”, the Google Play Developer Program Policy (“User Data” and “Data safety” requirements) and GDPR principles.</p>
     </section>
 
     <footer>
-      &copy; 2026 Hisobchim &middot; com.sevenuz.hisobchim
+      &copy; 2026 seven-uz &middot; Hisobchim &middot; <code>com.sevenuz.hisobchim</code><br>
+      <a href="/">privacy.sevenuz.uz</a>
     </footer>
   </div>
   <script src="/assets/theme.js"></script>
+  <script src="/assets/lang.js"></script>
 </body>
 </html>

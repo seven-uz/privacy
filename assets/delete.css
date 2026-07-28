@@ -1,0 +1,80 @@
+
+/* delete.css — akkauntni o'chirish sahifalari uchun qo'shimcha (style.css ga qo'shimcha) */
+.tl { display: none; }
+:root[data-lang="uz"] .tl-uz,
+:root[data-lang="ru"] .tl-ru,
+:root[data-lang="en"] .tl-en { display: inline; }
+:root:not([data-lang]) .tl { display: inline; }
+
+.field { margin: 18px 0; }
+.field label { display: block; font-weight: 600; font-size: 15px; margin-bottom: 6px; }
+.field label em { font-weight: 400; color: var(--muted); font-style: normal; font-size: 13.5px; }
+.field input, .field select, .field textarea {
+  width: 100%;
+  font: inherit;
+  font-size: 16px;
+  color: var(--ink);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 11px 13px;
+}
+.field input:focus, .field select:focus, .field textarea:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+  border-color: var(--accent);
+}
+.field input[readonly] { color: var(--muted); }
+.field textarea { resize: vertical; }
+.hint { color: var(--muted); font-size: 13.5px; margin: 8px 0 0; }
+
+.btn-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+.btn {
+  font: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 12px 20px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  color: var(--ink);
+  cursor: pointer;
+  transition: transform 0.12s ease, border-color 0.12s ease, background-color 0.12s ease;
+}
+.btn:hover { border-color: var(--accent); transform: translateY(-1px); }
+.btn-primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.btn-primary:hover { filter: brightness(1.06); }
+
+.preview { margin-top: 22px; }
+.preview summary { cursor: pointer; color: var(--accent); font-weight: 600; font-size: 15px; }
+.preview pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 16px;
+  font-size: 13.5px;
+  line-height: 1.6;
+  margin-top: 12px;
+  overflow-x: auto;
+}
+.plain-mail { font-size: 14px; color: var(--muted); font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+ol { margin: 14px 0; padding-left: 22px; }
+ol li { margin: 10px 0; }
+.pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 4px; }
+.pill {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  border: 1px solid var(--border);
+  text-decoration: none;
+}
+.pill:hover { border-color: var(--accent); }
+@media (max-width: 560px) {
+  .btn { width: 100%; text-align: center; }
+}

@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="uz" data-lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Akkauntni o’chirish / Account Deletion — Ishxonam (Universal Store) | seven-uz</title>
+  <meta name="description" content="Ishxonam (Universal Store) (com.sevenuz.ishxonam) — akkauntni va ma’lumotni o’chirish / Удаление аккаунта / Account and data deletion" />
+  <meta name="robots" content="index, follow" />
+  <link rel="icon" href="data:," />
+  <style>
+/* seven-uz · privacy.sevenuz.uz — umumiy shablon (light/dark) */
+
+:root {
+  --bg: #f6f5f0;
+  --surface: #ffffff;
+  --surface-2: #f0efe9;
+  --ink: #1e2621;
+  --muted: #626f66;
+  --border: #e4e2da;
+  --accent: #1f7a5a;
+  --accent-ink: #ffffff;
+  --accent-soft: rgba(31, 122, 90, 0.09);
+  --shadow: 0 1px 2px rgba(20, 30, 25, 0.04), 0 8px 24px rgba(20, 30, 25, 0.04);
+  --radius: 16px;
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  --bg: #12160f;
+  --surface: #1b211b;
+  --surface-2: #202720;
+  --ink: #edf1ea;
+  --muted: #9caa9c;
+  --border: #2b332a;
+  --accent: #45cc95;
+  --accent-ink: #0b1a12;
+  --accent-soft: rgba(69, 204, 149, 0.14);
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 12px 32px rgba(0, 0, 0, 0.35);
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #12160f;
+    --surface: #1b211b;
+    --surface-2: #202720;
+    --ink: #edf1ea;
+    --muted: #9caa9c;
+    --border: #2b332a;
+    --accent: #45cc95;
+    --accent-ink: #0b1a12;
+    --accent-soft: rgba(69, 204, 149, 0.14);
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 12px 32px rgba(0, 0, 0, 0.35);
+    color-scheme: dark;
+  }
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.7;
+  font-size: 17px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* ---------- topbar ---------- */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 20px;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  -webkit-backdrop-filter: saturate(180%) blur(10px);
+  backdrop-filter: saturate(180%) blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+.topbar .back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: none;
+  opacity: 0.85;
+}
+.topbar .back:hover { opacity: 1; color: var(--accent); }
+.topbar .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+  text-decoration: none;
+}
+.topbar .brand .dot {
+  width: 9px; height: 9px; border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px var(--accent-soft);
+}
+
+.theme-toggle {
+  appearance: none;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--ink);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 17px;
+  line-height: 1;
+  flex: 0 0 auto;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+.theme-toggle:hover { border-color: var(--accent); transform: translateY(-1px); }
+.theme-toggle:active { transform: translateY(0); }
+.theme-toggle .i-moon { display: none; }
+:root[data-theme="dark"] .theme-toggle .i-sun { display: none; }
+:root[data-theme="dark"] .theme-toggle .i-moon { display: inline; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .theme-toggle .i-sun { display: none; }
+  :root:not([data-theme="light"]) .theme-toggle .i-moon { display: inline; }
+}
+
+/* ---------- layout ---------- */
+.wrap {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 40px 20px 90px;
+}
+
+header, header.hero {
+  text-align: center;
+  padding: 36px 0 30px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 8px;
+}
+header .app {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 14px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+}
+h1 {
+  font-size: 30px;
+  line-height: 1.25;
+  margin: 0 0 12px;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+.meta { color: var(--muted); font-size: 15px; margin: 4px 0; }
+.meta strong { color: var(--muted); font-weight: 600; }
+
+/* ---------- card / content ---------- */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 10px 30px 32px;
+  margin-top: 26px;
+  box-shadow: var(--shadow);
+}
+h2 {
+  font-size: 20px;
+  margin: 32px 0 10px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  color: var(--accent);
+  letter-spacing: -0.005em;
+}
+h2:first-of-type { margin-top: 10px; padding-top: 8px; border-top: 0; }
+p { margin: 14px 0; }
+ul { margin: 14px 0; padding-left: 22px; }
+li { margin: 8px 0; }
+strong { color: var(--ink); font-weight: 700; }
+a { color: var(--accent); text-decoration-thickness: 1.5px; text-underline-offset: 2px; }
+a:hover { text-decoration: none; }
+
+table { width: 100%; border-collapse: collapse; margin: 14px 0; }
+th, td { text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--border); font-size: 15px; }
+th { color: var(--muted); font-weight: 600; }
+
+code {
+  background: var(--accent-soft);
+  color: var(--accent);
+  padding: 2px 7px;
+  border-radius: 6px;
+  font-size: 0.87em;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+.lang-tag {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 4px 13px;
+  border-radius: 20px;
+  margin-top: 6px;
+}
+nav.lang-nav { text-align: center; margin: 18px 0 0; }
+nav.lang-nav a {
+  margin: 0 8px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--muted);
+}
+nav.lang-nav a:hover { color: var(--accent); }
+
+hr { border: none; border-top: 1px solid var(--border); margin: 36px 0; }
+
+footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 14px;
+  margin-top: 40px;
+}
+footer a { color: var(--muted); }
+footer a:hover { color: var(--accent); }
+
+/* ---------- index / directory grid ---------- */
+.intro { text-align: center; max-width: 560px; margin: 0 auto 8px; }
+.intro h1 { font-size: 32px; }
+.intro p { color: var(--muted); }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-top: 34px;
+}
+@media (max-width: 560px) {
+  .grid { grid-template-columns: 1fr; }
+}
+
+.app-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px 18px;
+  text-decoration: none;
+  color: var(--ink);
+  box-shadow: var(--shadow);
+  transition: transform 0.12s ease, border-color 0.12s ease;
+}
+.app-card:hover { transform: translateY(-2px); border-color: var(--accent); }
+.app-card .badge {
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 16px;
+  color: var(--accent-ink);
+  background: var(--accent);
+}
+.app-card .txt { min-width: 0; }
+.app-card .name { font-weight: 700; font-size: 15.5px; display: block; }
+.app-card .desc { color: var(--muted); font-size: 13.5px; display: block; margin-top: 2px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+.contact-line { text-align: center; margin-top: 40px; color: var(--muted); font-size: 15px; }
+
+/* ---------- 3-tilli (uz/ru/en) qo'shimchalar — 2026-07-22 ---------- */
+
+/* til bloklari: JS o'chgan bo'lsa ham hammasi ko'rinadi (fallback) */
+.l { display: none; }
+:root[data-lang="uz"] .l-uz,
+:root[data-lang="ru"] .l-ru,
+:root[data-lang="en"] .l-en { display: block; }
+:root:not([data-lang]) .l { display: block; }
+
+/* matn ichidagi inline til bo'laklari */
+h1 .l, p .l, .meta .l, .app .l, span.l { display: none; }
+:root[data-lang="uz"] h1 .l-uz, :root[data-lang="uz"] p .l-uz,
+:root[data-lang="uz"] .meta .l-uz, :root[data-lang="uz"] .app .l-uz,
+:root[data-lang="ru"] h1 .l-ru, :root[data-lang="ru"] p .l-ru,
+:root[data-lang="ru"] .meta .l-ru, :root[data-lang="ru"] .app .l-ru,
+:root[data-lang="en"] h1 .l-en, :root[data-lang="en"] p .l-en,
+:root[data-lang="en"] .meta .l-en, :root[data-lang="en"] .app .l-en { display: inline; }
+:root:not([data-lang]) h1 .l, :root:not([data-lang]) p .l,
+:root:not([data-lang]) .meta .l, :root:not([data-lang]) .app .l { display: inline; }
+
+.tb-right { display: flex; align-items: center; gap: 10px; }
+
+.lang-switch {
+  display: inline-flex;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.lang-switch button {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 7px 12px;
+  cursor: pointer;
+  line-height: 1;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+.lang-switch button:hover { color: var(--accent); }
+.lang-switch button.on { background: var(--accent); color: var(--accent-ink); }
+
+.notice {
+  background: var(--accent-soft);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin: 18px 0;
+  font-size: 15.5px;
+}
+
+.pl {
+  display: inline-block;
+  margin-top: 3px;
+  font-size: 12.5px;
+  color: var(--muted);
+}
+
+.legal-note {
+  color: var(--muted);
+  font-size: 13.5px;
+  border-top: 1px solid var(--border);
+  padding-top: 16px;
+  margin-top: 26px;
+}
+
+td code { word-break: break-all; }
+@media (max-width: 560px) {
+  .card { padding: 10px 18px 26px; }
+  th, td { padding: 8px 6px; font-size: 14px; }
+  .topbar { padding: 12px 14px; }
+  .lang-switch button { padding: 7px 9px; }
+}
+
+
+.note {
+  background: var(--accent-soft);
+  border-left: 3px solid var(--accent);
+  border-radius: 8px;
+  padding: 10px 14px;
+}
+</style>
+  <script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);var q=(location.search.match(/[?&]lang=(uz|ru|en)/)||[])[1]||(location.hash.match(/^#(uz|ru|en)$/)||[])[1]||localStorage.getItem('lang');if(q)document.documentElement.setAttribute('data-lang',q);}catch(e){}})();</script>
+</head>
+<body>
+  <div class="topbar">
+    <a class="back" href="/">&larr; ishxonam.uz</a>
+    <div class="tb-right">
+      <div class="lang-switch" role="group" aria-label="Til / Язык / Language">
+        <button type="button" data-setlang="uz">UZ</button>
+        <button type="button" data-setlang="ru">RU</button>
+        <button type="button" data-setlang="en">EN</button>
+      </div>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Mavzuni almashtirish">
+        <span class="i-sun" aria-hidden="true">&#9728;&#65039;</span>
+        <span class="i-moon" aria-hidden="true">&#9789;</span>
+      </button>
+    </div>
+  </div>
+  <div class="wrap">
+    <header>
+      <span class="app"><span class="l l-uz">Do'kon/savdo boshqaruv ilovasi</span><span class="l l-ru">Приложение управления торговлей</span><span class="l l-en">Retail management app</span></span>
+      <h1><span class="l l-uz">Akkauntni va ma'lumotni o'chirish</span><span class="l l-ru">Удаление аккаунта и данных</span><span class="l l-en">Account &amp; Data Deletion</span></h1>
+      <p class="meta"><strong>Ishxonam (Universal Store)</strong></p>
+      <p class="meta"><span class="l l-uz">Ilova identifikatori</span><span class="l l-ru">Идентификатор приложения</span><span class="l l-en">Application ID</span>: <code>com.sevenuz.ishxonam</code></p>
+      <p class="meta"><span class="l l-uz">Ishlab chiquvchi: seven-uz (Zohid Juraev)</span><span class="l l-ru">Разработчик: seven-uz (Zohid Juraev)</span><span class="l l-en">Developer: seven-uz (Zohid Juraev)</span></p>
+      <p class="meta"><span class="l l-uz">Oxirgi yangilanish: 2026-yil 22-iyul</span><span class="l l-ru">Последнее обновление: 22 июля 2026 г.</span><span class="l l-en">Last updated: July 22, 2026</span></p>
+    </header>
+
+    <!-- ============================ O'ZBEKCHA ============================ -->
+    <section class="card l l-uz" lang="uz">
+      <span class="lang-tag">O'zbekcha</span>
+
+      <h2>Bu sahifa nima uchun</h2>
+      <p>Bu sahifa orqali <strong>Ishxonam (Universal Store)</strong> ilovasidagi akkauntingizni va u bilan bog'liq ma'lumotlarni o'chirishni so'rashingiz mumkin. Ilovani o'rnatmasdan ham, unga kirmasdan ham shu sahifadan foydalanish mumkin.</p>
+
+      <h2>Muhim: “akkaunt” ikki xil bo'ladi</h2>
+      <p>Ishxonam — ko'p-tashkilotli (multi-tenant) tizim. Har bir do'kon o'z alohida hisobiga (tenantiga) ega, do'kon ichida esa bir nechta xodim akkaunti bo'ladi. Shu sababli o'chirish so'rovi ikki xil bo'ladi:</p>
+      <ul>
+        <li><strong>A) Xodim akkaunti</strong> — bitta foydalanuvchi (kassir, sotuvchi, omborchi, admin) hisobini o'chirish. Do'kon va uning savdo ma'lumotlari saqlanib qoladi.</li>
+        <li><strong>B) Butun do'kon (tenant)</strong> — tashkilotning butun hisobini, barcha xodimlari va ma'lumotlari bilan birga o'chirish. Buni <strong>faqat do'kon egasi</strong> so'ray oladi.</li>
+      </ul>
+
+      <h2>Qanday so'rov yuboriladi (qadamma-qadam)</h2>
+      <ol>
+        <li>Quyidagi manzilga e-mail yuboring: <a href="mailto:uzseven.uz@gmail.com?subject=Ishxonam%20-%20akkauntni%20o'chirish">uzseven.uz@gmail.com</a></li>
+        <li>Xat mavzusiga yozing: <code>Ishxonam — akkauntni o'chirish</code></li>
+        <li>Xat matnida ko'rsating:
+          <ul>
+            <li>do'kon (tenant) manzili — masalan <code>dokonim.ishxonam.uz</code>;</li>
+            <li>akkauntingiz <strong>telefon raqami</strong> (ilovaga kirishda ishlatiladigan);</li>
+            <li>qaysi turdagi o'chirish kerakligi — <strong>A) faqat mening xodim akkauntim</strong> yoki <strong>B) butun do'kon</strong>.</li>
+          </ul>
+        </li>
+        <li>Xatni <strong>do'konga ro'yxatdan o'tgan telefon raqamdan</strong> tasdiqlashingiz so'raladi (shaxsni tekshirish uchun — boshqa odam sizning nomingizdan o'chira olmasligi kerak). Tasdiq uchun sizga javob xat yoki Telegram orqali bog'lanamiz.</li>
+        <li>Tasdiqdan so'ng so'rov bajariladi va sizga yozma xabar yuboriladi.</li>
+      </ol>
+      <p class="note">Alternativ: ilova ichida <strong>Sozlamalar → Yordam (Support)</strong> bo'limidan ham murojaat qoldirishingiz mumkin — natija bir xil.</p>
+
+      <h2>Qaysi ma'lumot o'chiriladi</h2>
+      <p><strong>A) Xodim akkaunti o'chirilganda:</strong></p>
+      <ul>
+        <li>foydalanuvchi profili — ism, telefon raqami, roli, bonus foizi;</li>
+        <li>parol hash'i va barcha faol sessiyalar (kirish tokenlari);</li>
+        <li>shaxsiy sozlamalari.</li>
+      </ul>
+      <p><strong>B) Butun do'kon o'chirilganda:</strong> yuqoridagilarga qo'shimcha ravishda do'konning barcha mahsulotlari, omborlari va qoldiqlari, mijozlar bazasi, ta'minotchilar, sotuv va qaytarish yozuvlari, kassa smenalari, moliyaviy (ledger) yozuvlari, xarajatlari, hisobotlari va yuklangan fayllari o'chiriladi.</p>
+
+      <h2>Qaysi ma'lumot saqlanadi va qancha muddat</h2>
+      <p>Ba'zi yozuvlar darhol o'chirilmaydi — buning qonuniy va texnik sabablari bor:</p>
+      <ul>
+        <li><strong>Savdo/moliyaviy hujjatlar</strong> (sotuv cheklari, ledger yozuvlari, kassa smenalari) — <strong>xodim akkaunti</strong> o'chirilsa ham do'kon buxgalteriyasi buzilmasligi uchun saqlanadi, lekin foydalanuvchi ismi <code>O'chirilgan foydalanuvchi</code> ga almashtiriladi (anonimlashtiriladi). Bu yozuvlar do'kon egasiga tegishli va faqat B) variantda (butun do'kon o'chirilganda) o'chadi.</li>
+        <li><strong>Butun do'kon o'chirilganda</strong> savdo hujjatlari <strong>O'zbekiston Respublikasining buxgalteriya va soliq hisobi talablariga</strong> muvofiq <strong>5 (besh) yilgacha</strong> arxivda saqlanishi mumkin. Arxiv shifrlangan holda, alohida saqlanadi va faqat vakolatli davlat organining rasmiy so'rovi bo'yicha ochiladi — kundalik ishlatilmaydi, hech kimga berilmaydi va reklama uchun ishlatilmaydi.</li>
+        <li><strong>Xavfsizlik (audit) jurnali</strong> — kim qachon qaysi amalni bajargani. <strong>90 kun</strong> saqlanadi, so'ng avtomatik o'chadi.</li>
+        <li><strong>To'lov/hisob-faktura yozuvlari</strong> (obuna to'lovlari) — soliq talabi bilan <strong>5 yil</strong> saqlanadi.</li>
+        <li><strong>Zaxira nusxalar (backup)</strong> — o'chirilgan ma'lumot kunlik zaxira nusxalarda qolishi mumkin; zaxira nusxalari <strong>30 kun</strong>dan keyin avtomatik yo'q qilinadi.</li>
+      </ul>
+      <p>Boshqa hech qanday ma'lumot saqlanmaydi. Ma'lumot uchinchi tomonga sotilmaydi va reklama uchun ishlatilmaydi.</p>
+
+      <h2>Ariza qancha vaqtda bajariladi</h2>
+      <ul>
+        <li>So'rov qabul qilingani <strong>3 ish kuni</strong> ichida tasdiqlanadi.</li>
+        <li>Shaxs tasdiqlangach, o'chirish <strong>30 kun</strong> ichida to'liq bajariladi (odatda ancha tezroq).</li>
+        <li>Bajarilgani haqida sizga yozma xabar yuboriladi.</li>
+      </ul>
+      <p class="note"><strong>Fikrdan qaytish:</strong> so'rov yuborilgandan keyin <strong>7 kun</strong> ichida bekor qilishingiz mumkin — shu davrda ma'lumot o'chirilmaydi, faqat hisob vaqtincha bloklanadi.</p>
+
+      <h2>Qurilmadagi ma'lumotni o'chirish</h2>
+      <p>Ilova oflayn ishlashi uchun ma'lumot nusxasini qurilmangizda ham saqlaydi. Uni o'chirish uchun: <strong>Sozlamalar → Ilovalar → Ishxonam → Xotira → Ma'lumotlarni tozalash</strong>, yoki ilovani o'chirib tashlang. Bu serverdagi ma'lumotga ta'sir qilmaydi.</p>
+
+      <h2>Bog'lanish</h2>
+      <p><strong>E-mail:</strong> <a href="mailto:uzseven.uz@gmail.com">uzseven.uz@gmail.com</a><br>
+      <strong>Maxfiylik siyosati:</strong> <a href="https://ishxonam.uz/privacy">ishxonam.uz/privacy</a></p>
+    </section>
+
+    <!-- ============================ РУССКИЙ ============================ -->
+    <section class="card l l-ru" lang="ru">
+      <span class="lang-tag">Русский</span>
+
+      <h2>Назначение страницы</h2>
+      <p>На этой странице вы можете запросить удаление аккаунта и связанных с ним данных в приложении <strong>Ishxonam (Universal Store)</strong>. Страница доступна без установки приложения и без входа в систему.</p>
+
+      <h2>Важно: «аккаунт» бывает двух видов</h2>
+      <p>Ishxonam — мультиарендная (multi-tenant) система. У каждого магазина свой отдельный аккаунт (tenant), а внутри магазина — несколько сотрудников. Поэтому запрос бывает двух видов:</p>
+      <ul>
+        <li><strong>A) Аккаунт сотрудника</strong> — удаление одного пользователя (кассир, продавец, кладовщик, админ). Магазин и его торговые данные сохраняются.</li>
+        <li><strong>B) Весь магазин (tenant)</strong> — удаление всей организации со всеми сотрудниками и данными. Запросить может <strong>только владелец магазина</strong>.</li>
+      </ul>
+
+      <h2>Как отправить запрос (пошагово)</h2>
+      <ol>
+        <li>Напишите на адрес: <a href="mailto:uzseven.uz@gmail.com?subject=Ishxonam%20-%20udalenie%20akkaunta">uzseven.uz@gmail.com</a></li>
+        <li>Тема письма: <code>Ishxonam — удаление аккаунта</code></li>
+        <li>В письме укажите:
+          <ul>
+            <li>адрес магазина (tenant) — например <code>dokonim.ishxonam.uz</code>;</li>
+            <li><strong>номер телефона</strong> вашего аккаунта (используется для входа);</li>
+            <li>тип удаления — <strong>A) только мой аккаунт сотрудника</strong> или <strong>B) весь магазин</strong>.</li>
+          </ul>
+        </li>
+        <li>Мы попросим подтвердить запрос <strong>с зарегистрированного номера телефона</strong> (проверка личности — чтобы никто не смог удалить аккаунт от вашего имени).</li>
+        <li>После подтверждения запрос выполняется, вам направляется письменное уведомление.</li>
+      </ol>
+      <p class="note">Альтернатива: обращение можно оставить в приложении — <strong>Настройки → Поддержка</strong>. Результат тот же.</p>
+
+      <h2>Какие данные удаляются</h2>
+      <p><strong>A) При удалении аккаунта сотрудника:</strong> профиль (имя, телефон, роль, процент бонуса), хеш пароля и все активные сессии, личные настройки.</p>
+      <p><strong>B) При удалении всего магазина:</strong> дополнительно — все товары, склады и остатки, база клиентов, поставщики, продажи и возвраты, кассовые смены, финансовые (ledger) записи, расходы, отчёты и загруженные файлы.</p>
+
+      <h2>Какие данные сохраняются и на какой срок</h2>
+      <ul>
+        <li><strong>Торговые/финансовые документы</strong> (чеки, записи ledger, кассовые смены) — при удалении <strong>сотрудника</strong> сохраняются, чтобы не нарушить бухгалтерию магазина, но имя пользователя заменяется на <code>Удалённый пользователь</code> (анонимизация).</li>
+        <li><strong>При удалении всего магазина</strong> торговые документы могут храниться в архиве до <strong>5 (пяти) лет</strong> согласно требованиям бухгалтерского и налогового учёта Республики Узбекистан. Архив хранится в зашифрованном виде отдельно и открывается только по официальному запросу уполномоченного государственного органа.</li>
+        <li><strong>Журнал безопасности (аудит)</strong> — <strong>90 дней</strong>, затем удаляется автоматически.</li>
+        <li><strong>Платёжные документы</strong> (оплата подписки) — <strong>5 лет</strong> по налоговым требованиям.</li>
+        <li><strong>Резервные копии</strong> — удалённые данные могут оставаться в ежедневных бэкапах; бэкапы уничтожаются через <strong>30 дней</strong>.</li>
+      </ul>
+
+      <h2>Сроки исполнения</h2>
+      <ul>
+        <li>Подтверждение получения запроса — в течение <strong>3 рабочих дней</strong>.</li>
+        <li>Полное удаление после подтверждения личности — в течение <strong>30 дней</strong> (обычно быстрее).</li>
+        <li>Об исполнении вы получите письменное уведомление.</li>
+      </ul>
+      <p class="note"><strong>Отмена:</strong> запрос можно отозвать в течение <strong>7 дней</strong> — в этот период данные не удаляются, аккаунт лишь временно блокируется.</p>
+
+      <h2>Удаление данных на устройстве</h2>
+      <p>Приложение хранит офлайн-копию данных на устройстве. Чтобы её удалить: <strong>Настройки → Приложения → Ishxonam → Память → Очистить данные</strong>, либо удалите приложение. На серверные данные это не влияет.</p>
+
+      <h2>Контакты</h2>
+      <p><strong>E-mail:</strong> <a href="mailto:uzseven.uz@gmail.com">uzseven.uz@gmail.com</a><br>
+      <strong>Политика конфиденциальности:</strong> <a href="https://ishxonam.uz/privacy">ishxonam.uz/privacy</a></p>
+    </section>
+
+    <!-- ============================ ENGLISH ============================ -->
+    <section class="card l l-en" lang="en">
+      <span class="lang-tag">English</span>
+
+      <h2>What this page is for</h2>
+      <p>Use this page to request deletion of your account and associated data in the <strong>Ishxonam (Universal Store)</strong> app. The page is publicly accessible — no login and no app installation required.</p>
+
+      <h2>Important: there are two kinds of “account”</h2>
+      <p>Ishxonam is a multi-tenant system. Every shop has its own separate account (tenant), and inside a shop there are several staff accounts. Therefore a deletion request is one of two types:</p>
+      <ul>
+        <li><strong>A) Staff account</strong> — delete a single user (cashier, seller, stock keeper, admin). The shop and its business records remain.</li>
+        <li><strong>B) Entire shop (tenant)</strong> — delete the whole organisation with all its staff and data. This can be requested by the <strong>shop owner only</strong>.</li>
+      </ul>
+
+      <h2>How to submit a request (step by step)</h2>
+      <ol>
+        <li>Send an e-mail to: <a href="mailto:uzseven.uz@gmail.com?subject=Ishxonam%20-%20account%20deletion">uzseven.uz@gmail.com</a></li>
+        <li>Subject: <code>Ishxonam — account deletion</code></li>
+        <li>In the message, state:
+          <ul>
+            <li>your shop (tenant) address — e.g. <code>myshop.ishxonam.uz</code>;</li>
+            <li>the <strong>phone number</strong> of your account (the one used to sign in);</li>
+            <li>which deletion you want — <strong>A) my staff account only</strong> or <strong>B) the entire shop</strong>.</li>
+          </ul>
+        </li>
+        <li>We will ask you to confirm the request <strong>from the registered phone number</strong> (identity check, so nobody can delete your account on your behalf).</li>
+        <li>After confirmation the request is executed and you receive a written notification.</li>
+      </ol>
+      <p class="note">Alternative: you can also open a request inside the app under <strong>Settings → Support</strong>. The outcome is the same.</p>
+
+      <h2>What data is deleted</h2>
+      <p><strong>A) When a staff account is deleted:</strong> the user profile (name, phone number, role, bonus percentage), the password hash and all active sessions (access tokens), and personal settings.</p>
+      <p><strong>B) When the entire shop is deleted:</strong> in addition — all products, warehouses and stock balances, the customer database, suppliers, sales and returns, cash shifts, financial (ledger) entries, expenses, reports and uploaded files.</p>
+
+      <h2>What is retained, and for how long</h2>
+      <ul>
+        <li><strong>Sales / financial documents</strong> (receipts, ledger entries, cash shifts) are retained when a <strong>staff account</strong> is deleted, so the shop's bookkeeping is not broken; the user's name is replaced with <code>Deleted user</code> (anonymised). These records belong to the shop owner and are removed only in case B.</li>
+        <li><strong>When the entire shop is deleted</strong>, sales documents may be kept in an archive for up to <strong>5 (five) years</strong>, as required by the accounting and tax legislation of the Republic of Uzbekistan. The archive is stored encrypted and separately, and is opened only on an official request from an authorised state body. It is never used operationally, never shared and never used for advertising.</li>
+        <li><strong>Security (audit) log</strong> — retained for <strong>90 days</strong>, then deleted automatically.</li>
+        <li><strong>Billing / invoice records</strong> (subscription payments) — retained for <strong>5 years</strong> for tax purposes.</li>
+        <li><strong>Backups</strong> — deleted data may remain in daily backups; backups are destroyed after <strong>30 days</strong>.</li>
+      </ul>
+      <p>No other data is retained. Data is never sold to third parties and never used for advertising.</p>
+
+      <h2>How long it takes</h2>
+      <ul>
+        <li>Receipt of the request is acknowledged within <strong>3 business days</strong>.</li>
+        <li>After identity confirmation, deletion is completed within <strong>30 days</strong> (usually much sooner).</li>
+        <li>You receive a written notification once it is done.</li>
+      </ul>
+      <p class="note"><strong>Cancellation:</strong> a request may be withdrawn within <strong>7 days</strong>; during that period data is not deleted, the account is only temporarily suspended.</p>
+
+      <h2>Deleting on-device data</h2>
+      <p>The app keeps an offline copy of the data on your device. To remove it: <strong>Settings → Apps → Ishxonam → Storage → Clear data</strong>, or uninstall the app. This does not affect server-side data.</p>
+
+      <h2>Contact</h2>
+      <p><strong>E-mail:</strong> <a href="mailto:uzseven.uz@gmail.com">uzseven.uz@gmail.com</a><br>
+      <strong>Privacy Policy:</strong> <a href="https://ishxonam.uz/privacy">ishxonam.uz/privacy</a></p>
+    </section>
+
+    <footer>
+      &copy; 2026 seven-uz &middot; Ishxonam (Universal Store) &middot; <code>com.sevenuz.ishxonam</code><br>
+      <a href="https://ishxonam.uz/privacy">ishxonam.uz/privacy</a> &middot; <a href="https://ishxonam.uz/delete-account">ishxonam.uz/delete-account</a>
+    </footer>
+  </div>
+  <script>
+(function () {
+  var KEY = "theme";
+  var root = document.documentElement;
+
+  function apply(t) {
+    if (t === "dark" || t === "light") {
+      root.setAttribute("data-theme", t);
+    } else {
+      root.removeAttribute("data-theme");
+    }
+  }
+
+  function isDarkNow() {
+    var explicit = root.getAttribute("data-theme");
+    if (explicit === "dark") return true;
+    if (explicit === "light") return false;
+    return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    var btn = document.getElementById("themeToggle");
+    if (!btn) return;
+    btn.addEventListener("click", function () {
+      var next = isDarkNow() ? "light" : "dark";
+      apply(next);
+      try {
+        localStorage.setItem(KEY, next);
+      } catch (e) {}
+    });
+  });
+})();
+
+</script>
+  <script>
+(function () {
+  var KEY = "lang";
+  var root = document.documentElement;
+  var VALID = { uz: 1, ru: 1, en: 1 };
+
+  function current() {
+    var l = root.getAttribute("data-lang");
+    return VALID[l] ? l : "uz";
+  }
+
+  function apply(l) {
+    if (!VALID[l]) l = "uz";
+    root.setAttribute("data-lang", l);
+    root.setAttribute("lang", l);
+    var btns = document.querySelectorAll("[data-setlang]");
+    for (var i = 0; i < btns.length; i++) {
+      var on = btns[i].getAttribute("data-setlang") === l;
+      btns[i].classList.toggle("on", on);
+      btns[i].setAttribute("aria-pressed", on ? "true" : "false");
+    }
+    try { localStorage.setItem(KEY, l); } catch (e) {}
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    apply(current());
+    var btns = document.querySelectorAll("[data-setlang]");
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].addEventListener("click", function () {
+        apply(this.getAttribute("data-setlang"));
+        if (history && history.replaceState) {
+          history.replaceState(null, "", location.pathname + "?lang=" + current());
+        }
+      });
+    }
+  });
+})();
+
+</script>
+</body>
+</html>

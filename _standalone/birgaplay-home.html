@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="uz" data-lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BirgaPlay — sport maydonlarini band qilish</title>
+  <meta name="description" content="BirgaPlay (com.sevenuz.birgaplay) — sport maydonlarini xaritadan topish, vaqt band qilish, jamoa yig'ish va raqib topish uchun mobil ilova." />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#1f7a5a" />
+  <link rel="icon" href="data:," />
+  <style>
+/* seven-uz · birgaplay.uz — bosh sahifa (light/dark), privacy shabloni bilan bir xil */
+
+:root {
+  --bg: #f6f5f0;
+  --surface: #ffffff;
+  --surface-2: #f0efe9;
+  --ink: #1e2621;
+  --muted: #626f66;
+  --border: #e4e2da;
+  --accent: #1f7a5a;
+  --accent-ink: #ffffff;
+  --accent-soft: rgba(31, 122, 90, 0.09);
+  --shadow: 0 1px 2px rgba(20, 30, 25, 0.04), 0 8px 24px rgba(20, 30, 25, 0.04);
+  --radius: 16px;
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  --bg: #12160f;
+  --surface: #1b211b;
+  --surface-2: #202720;
+  --ink: #edf1ea;
+  --muted: #9caa9c;
+  --border: #2b332a;
+  --accent: #45cc95;
+  --accent-ink: #0b1a12;
+  --accent-soft: rgba(69, 204, 149, 0.14);
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 12px 32px rgba(0, 0, 0, 0.35);
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #12160f;
+    --surface: #1b211b;
+    --surface-2: #202720;
+    --ink: #edf1ea;
+    --muted: #9caa9c;
+    --border: #2b332a;
+    --accent: #45cc95;
+    --accent-ink: #0b1a12;
+    --accent-soft: rgba(69, 204, 149, 0.14);
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 12px 32px rgba(0, 0, 0, 0.35);
+    color-scheme: dark;
+  }
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.7;
+  font-size: 17px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* ---------- topbar ---------- */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 20px;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  -webkit-backdrop-filter: saturate(180%) blur(10px);
+  backdrop-filter: saturate(180%) blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+.topbar .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+  text-decoration: none;
+}
+.topbar .brand .dot {
+  width: 9px; height: 9px; border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px var(--accent-soft);
+  flex: 0 0 auto;
+}
+.tb-right { display: inline-flex; align-items: center; gap: 10px; }
+
+.theme-toggle {
+  appearance: none;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--ink);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 17px;
+  line-height: 1;
+  flex: 0 0 auto;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+.theme-toggle:hover { border-color: var(--accent); transform: translateY(-1px); }
+.theme-toggle:active { transform: translateY(0); }
+.theme-toggle .i-moon { display: none; }
+:root[data-theme="dark"] .theme-toggle .i-sun { display: none; }
+:root[data-theme="dark"] .theme-toggle .i-moon { display: inline; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .theme-toggle .i-sun { display: none; }
+  :root:not([data-theme="light"]) .theme-toggle .i-moon { display: inline; }
+}
+
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: 999px;
+  padding: 3px;
+}
+.lang-switch button {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  padding: 6px 11px;
+  border-radius: 999px;
+  cursor: pointer;
+  line-height: 1;
+}
+.lang-switch button:hover { color: var(--accent); }
+.lang-switch button.on { background: var(--accent); color: var(--accent-ink); }
+
+/* ---------- layout ---------- */
+.wrap {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 40px 20px 90px;
+}
+
+header.hero {
+  text-align: center;
+  padding: 30px 0 34px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 8px;
+}
+header.hero .app {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 16px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+}
+h1 {
+  font-size: 34px;
+  line-height: 1.2;
+  margin: 0 0 12px;
+  color: var(--ink);
+  letter-spacing: -0.015em;
+}
+.tagline { color: var(--muted); font-size: 18px; margin: 0 auto; max-width: 30em; }
+.meta { color: var(--muted); font-size: 15px; margin: 4px 0; }
+.meta strong { color: var(--muted); font-weight: 600; }
+
+/* ---------- card ---------- */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px 30px 28px;
+  margin-top: 26px;
+  box-shadow: var(--shadow);
+}
+h2 {
+  font-size: 20px;
+  margin: 0 0 12px;
+  color: var(--accent);
+  letter-spacing: -0.005em;
+}
+p { margin: 14px 0; }
+ul { margin: 14px 0; padding-left: 22px; }
+li { margin: 8px 0; }
+strong { color: var(--ink); font-weight: 700; }
+a { color: var(--accent); text-decoration-thickness: 1.5px; text-underline-offset: 2px; }
+a:hover { text-decoration: none; }
+
+code {
+  background: var(--accent-soft);
+  color: var(--accent);
+  padding: 2px 7px;
+  border-radius: 6px;
+  font-size: 0.87em;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  word-break: break-word;
+}
+
+/* ---------- status pill ---------- */
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 22px;
+  padding: 9px 16px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: 999px;
+  font-size: 14px;
+  color: var(--muted);
+  font-weight: 600;
+  box-shadow: var(--shadow);
+}
+.status .pulse {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px var(--accent-soft);
+  flex: 0 0 auto;
+}
+
+/* ---------- features ---------- */
+.features { list-style: none; margin: 6px 0 0; padding: 0; display: grid; gap: 14px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.features li {
+  margin: 0;
+  padding: 16px 18px;
+  border: 1px solid var(--border);
+  border-radius: 13px;
+  background: var(--surface-2);
+  font-size: 15.5px;
+  line-height: 1.55;
+}
+.features .ft { display: block; font-weight: 700; color: var(--ink); margin-bottom: 3px; }
+.features .fd { display: block; color: var(--muted); font-size: 14.5px; }
+
+/* ---------- link rows ---------- */
+.links { display: grid; gap: 12px; margin-top: 4px; }
+.linkrow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 15px 18px;
+  border: 1px solid var(--border);
+  border-radius: 13px;
+  background: var(--surface-2);
+  color: var(--ink);
+  text-decoration: none;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+.linkrow:hover { border-color: var(--accent); transform: translateY(-1px); }
+.linkrow .lt { display: block; font-weight: 700; font-size: 16px; }
+.linkrow .ld { display: block; color: var(--muted); font-size: 14px; line-height: 1.5; }
+.linkrow .arrow { color: var(--accent); font-size: 20px; flex: 0 0 auto; }
+
+/* ---------- footer ---------- */
+footer {
+  margin-top: 34px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  color: var(--muted);
+  font-size: 14px;
+}
+footer p { margin: 6px 0; }
+
+/* ---------- til (i18n) ---------- */
+.l { display: none; }
+:root[data-lang="uz"] .l-uz,
+:root[data-lang="ru"] .l-ru,
+:root[data-lang="en"] .l-en { display: revert; }
+:root:not([data-lang]) .l-uz { display: revert; }
+
+/* ---------- mobil ---------- */
+@media (max-width: 620px) {
+  body { font-size: 16px; }
+  .wrap { padding: 26px 16px 70px; }
+  h1 { font-size: 27px; }
+  .tagline { font-size: 16.5px; }
+  .card { padding: 20px 18px 24px; border-radius: 14px; }
+  .features { grid-template-columns: 1fr; gap: 11px; }
+  .topbar { padding: 11px 14px; }
+  .topbar .brand { font-size: 14px; }
+  .lang-switch button { padding: 6px 9px; }
+  .linkrow { padding: 14px 15px; }
+}
+@media (max-width: 380px) {
+  .topbar { gap: 8px; }
+  .tb-right { gap: 7px; }
+  .lang-switch button { padding: 6px 7px; font-size: 11.5px; }
+}
+  </style>
+  <script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);var q=(location.search.match(/[?&]lang=(uz|ru|en)/)||[])[1]||(location.hash.match(/^#(uz|ru|en)$/)||[])[1]||localStorage.getItem('lang');if(q)document.documentElement.setAttribute('data-lang',q);}catch(e){}})();</script>
+</head>
+<body>
+  <div class="topbar">
+    <span class="brand"><span class="dot" aria-hidden="true"></span>BirgaPlay</span>
+    <div class="tb-right">
+      <div class="lang-switch" role="group" aria-label="Til / Язык / Language">
+        <button type="button" data-setlang="uz">UZ</button>
+        <button type="button" data-setlang="ru">RU</button>
+        <button type="button" data-setlang="en">EN</button>
+      </div>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Mavzuni almashtirish / Сменить тему / Toggle theme">
+        <span class="i-sun" aria-hidden="true">&#9728;&#65039;</span>
+        <span class="i-moon" aria-hidden="true">&#9789;</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <header class="hero">
+      <span class="app"><span class="l l-uz">Sport maydonlarini band qilish</span><span class="l l-ru">Бронирование спортивных площадок</span><span class="l l-en">Sports pitch booking</span></span>
+      <h1>BirgaPlay</h1>
+      <p class="tagline">
+        <span class="l l-uz">Sport maydonlarini xaritadan toping, vaqtni band qiling, jamoa yig'ing va raqib toping — bitta ilovada.</span>
+        <span class="l l-ru">Находите спортивные площадки на карте, бронируйте время, собирайте команду и находите соперника — в одном приложении.</span>
+        <span class="l l-en">Find sports pitches on the map, book a time slot, gather your team and find an opponent — all in one app.</span>
+      </p>
+      <span class="status">
+        <span class="pulse" aria-hidden="true"></span>
+        <span class="l l-uz">Ilova tayyorlanmoqda — tez orada Google Play'da</span>
+        <span class="l l-ru">Приложение готовится — скоро в Google Play</span>
+        <span class="l l-en">The app is in preparation — coming soon on Google Play</span>
+      </span>
+    </header>
+
+    <section class="card">
+      <h2>
+        <span class="l l-uz">Imkoniyatlar</span>
+        <span class="l l-ru">Возможности</span>
+        <span class="l l-en">Features</span>
+      </h2>
+      <ul class="features">
+        <li>
+          <span class="ft"><span class="l l-uz">Maydon qidirish</span><span class="l l-ru">Поиск площадок</span><span class="l l-en">Pitch search</span></span>
+          <span class="fd"><span class="l l-uz">Xaritada, sport turi va reyting bo'yicha filtrlash.</span><span class="l l-ru">На карте, с фильтрами по виду спорта и рейтингу.</span><span class="l l-en">On the map, filtered by sport type and rating.</span></span>
+        </li>
+        <li>
+          <span class="ft"><span class="l l-uz">Band qilish</span><span class="l l-ru">Бронирование</span><span class="l l-en">Booking</span></span>
+          <span class="fd"><span class="l l-uz">30 daqiqalik va soatlik slotlar, cashback hamyoni.</span><span class="l l-ru">Слоты по 30 минут и по часу, кэшбэк-кошелёк.</span><span class="l l-en">30-minute and hourly slots, cashback wallet.</span></span>
+        </li>
+        <li>
+          <span class="ft"><span class="l l-uz">Jamoa va raqib</span><span class="l l-ru">Команда и соперник</span><span class="l l-en">Team &amp; opponent</span></span>
+          <span class="fd"><span class="l l-uz">Jamoa tuzish, ochiq o'yinlar va raqib qidirish.</span><span class="l l-ru">Создание команды, открытые игры и поиск соперника.</span><span class="l l-en">Create a team, open games and opponent matchmaking.</span></span>
+        </li>
+        <li>
+          <span class="ft"><span class="l l-uz">To'lovni bo'lish</span><span class="l l-ru">Разделение оплаты</span><span class="l l-en">Split payment</span></span>
+          <span class="fd"><span class="l l-uz">O'yin narxini jamoa a'zolari o'rtasida bo'lish.</span><span class="l l-ru">Стоимость игры делится между участниками команды.</span><span class="l l-en">Share the cost of a game between team members.</span></span>
+        </li>
+        <li>
+          <span class="ft"><span class="l l-uz">Choyxona</span><span class="l l-ru">Чайхана</span><span class="l l-en">Teahouse</span></span>
+          <span class="fd"><span class="l l-uz">Band qilishga qo'shib taom buyurtma qilish.</span><span class="l l-ru">Заказ еды вместе с бронированием.</span><span class="l l-en">Order food together with your booking.</span></span>
+        </li>
+        <li>
+          <span class="ft"><span class="l l-uz">Turnir va murabbiylar</span><span class="l l-ru">Турниры и тренеры</span><span class="l l-en">Tournaments &amp; coaches</span></span>
+          <span class="fd"><span class="l l-uz">Turnirlar, murabbiylar va yangiliklar bo'limi.</span><span class="l l-ru">Турниры, тренеры и раздел новостей.</span><span class="l l-en">Tournaments, coaches and a news section.</span></span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>
+        <span class="l l-uz">Huquqiy hujjatlar</span>
+        <span class="l l-ru">Правовые документы</span>
+        <span class="l l-en">Legal</span>
+      </h2>
+      <div class="links">
+        <a class="linkrow" href="/privacy">
+          <span>
+            <span class="lt"><span class="l l-uz">Maxfiylik siyosati</span><span class="l l-ru">Политика конфиденциальности</span><span class="l l-en">Privacy Policy</span></span>
+            <span class="ld"><span class="l l-uz">Qanday ma'lumot to'planadi, qayerda saqlanadi va qanday himoyalanadi.</span><span class="l l-ru">Какие данные собираются, где хранятся и как защищаются.</span><span class="l l-en">What data is collected, where it is stored and how it is protected.</span></span>
+          </span>
+          <span class="arrow" aria-hidden="true">&rarr;</span>
+        </a>
+        <a class="linkrow" href="https://privacy.sevenuz.uz/delete/birgaplay/">
+          <span>
+            <span class="lt"><span class="l l-uz">Akkauntni o'chirish</span><span class="l l-ru">Удаление аккаунта</span><span class="l l-en">Account deletion</span></span>
+            <span class="ld"><span class="l l-uz">Akkaunt va ma'lumotlarni o'chirish so'rovini yuborish — bepul, loginsiz.</span><span class="l l-ru">Отправить запрос на удаление аккаунта и данных — бесплатно, без входа.</span><span class="l l-en">Request deletion of your account and data — free of charge, no sign-in.</span></span>
+          </span>
+          <span class="arrow" aria-hidden="true">&rarr;</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>
+        <span class="l l-uz">Ilova va aloqa</span>
+        <span class="l l-ru">Приложение и контакты</span>
+        <span class="l l-en">App &amp; contact</span>
+      </h2>
+      <p class="meta"><span class="l l-uz">Ilova identifikatori</span><span class="l l-ru">Идентификатор приложения</span><span class="l l-en">Application ID</span>: <code>com.sevenuz.birgaplay</code></p>
+      <p class="meta"><span class="l l-uz">Ishlab chiquvchi</span><span class="l l-ru">Разработчик</span><span class="l l-en">Developer</span>: <strong>seven-uz</strong></p>
+      <p class="meta"><span class="l l-uz">Platforma</span><span class="l l-ru">Платформа</span><span class="l l-en">Platform</span>: Android</p>
+      <p class="meta"><span class="l l-uz">Aloqa</span><span class="l l-ru">Связь</span><span class="l l-en">Contact</span>: <a href="mailto:uzseven.uz@gmail.com">uzseven.uz@gmail.com</a></p>
+    </section>
+
+    <footer>
+      <p>&copy; 2026 seven-uz &middot; birgaplay.uz</p>
+      <p>
+        <span class="l l-uz">Savol va takliflar uchun:</span>
+        <span class="l l-ru">Вопросы и предложения:</span>
+        <span class="l l-en">Questions and suggestions:</span>
+        <a href="mailto:uzseven.uz@gmail.com">uzseven.uz@gmail.com</a>
+      </p>
+    </footer>
+  </div>
+
+  <script>
+(function () {
+  var KEY = "theme";
+  var root = document.documentElement;
+
+  function apply(t) {
+    if (t === "dark" || t === "light") {
+      root.setAttribute("data-theme", t);
+    } else {
+      root.removeAttribute("data-theme");
+    }
+  }
+
+  function isDarkNow() {
+    var explicit = root.getAttribute("data-theme");
+    if (explicit === "dark") return true;
+    if (explicit === "light") return false;
+    return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    var btn = document.getElementById("themeToggle");
+    if (!btn) return;
+    btn.addEventListener("click", function () {
+      var next = isDarkNow() ? "light" : "dark";
+      apply(next);
+      try { localStorage.setItem(KEY, next); } catch (e) {}
+    });
+  });
+})();
+  </script>
+  <script>
+(function () {
+  var KEY = "lang";
+  var root = document.documentElement;
+  var VALID = { uz: 1, ru: 1, en: 1 };
+
+  function current() {
+    var l = root.getAttribute("data-lang");
+    return VALID[l] ? l : "uz";
+  }
+
+  function apply(l) {
+    if (!VALID[l]) l = "uz";
+    root.setAttribute("data-lang", l);
+    root.setAttribute("lang", l);
+    var btns = document.querySelectorAll("[data-setlang]");
+    for (var i = 0; i < btns.length; i++) {
+      var on = btns[i].getAttribute("data-setlang") === l;
+      btns[i].classList.toggle("on", on);
+      btns[i].setAttribute("aria-pressed", on ? "true" : "false");
+    }
+    try { localStorage.setItem(KEY, l); } catch (e) {}
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    apply(current());
+    var btns = document.querySelectorAll("[data-setlang]");
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].addEventListener("click", function () {
+        apply(this.getAttribute("data-setlang"));
+        if (history && history.replaceState) {
+          history.replaceState(null, "", location.pathname + "?lang=" + current());
+        }
+      });
+    }
+  });
+})();
+  </script>
+</body>
+</html>

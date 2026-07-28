@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="uz" data-lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maxfiylik siyosati — Ishxonam (Universal Store) | seven-uz</title>
+  <meta name="description" content="Ishxonam (Universal Store) (com.sevenuz.ishxonam) — maxfiylik siyosati / Политика конфиденциальности / Privacy Policy" />
+  <meta name="robots" content="index, follow" />
+  <link rel="icon" href="data:," />
+  <style>
+/* seven-uz · privacy.sevenuz.uz — umumiy shablon (light/dark) */
+
+:root {
+  --bg: #f6f5f0;
+  --surface: #ffffff;
+  --surface-2: #f0efe9;
+  --ink: #1e2621;
+  --muted: #626f66;
+  --border: #e4e2da;
+  --accent: #1f7a5a;
+  --accent-ink: #ffffff;
+  --accent-soft: rgba(31, 122, 90, 0.09);
+  --shadow: 0 1px 2px rgba(20, 30, 25, 0.04), 0 8px 24px rgba(20, 30, 25, 0.04);
+  --radius: 16px;
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  --bg: #12160f;
+  --surface: #1b211b;
+  --surface-2: #202720;
+  --ink: #edf1ea;
+  --muted: #9caa9c;
+  --border: #2b332a;
+  --accent: #45cc95;
+  --accent-ink: #0b1a12;
+  --accent-soft: rgba(69, 204, 149, 0.14);
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 12px 32px rgba(0, 0, 0, 0.35);
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #12160f;
+    --surface: #1b211b;
+    --surface-2: #202720;
+    --ink: #edf1ea;
+    --muted: #9caa9c;
+    --border: #2b332a;
+    --accent: #45cc95;
+    --accent-ink: #0b1a12;
+    --accent-soft: rgba(69, 204, 149, 0.14);
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 12px 32px rgba(0, 0, 0, 0.35);
+    color-scheme: dark;
+  }
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.7;
+  font-size: 17px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* ---------- topbar ---------- */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 20px;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  -webkit-backdrop-filter: saturate(180%) blur(10px);
+  backdrop-filter: saturate(180%) blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+.topbar .back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: none;
+  opacity: 0.85;
+}
+.topbar .back:hover { opacity: 1; color: var(--accent); }
+.topbar .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+  text-decoration: none;
+}
+.topbar .brand .dot {
+  width: 9px; height: 9px; border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px var(--accent-soft);
+}
+
+.theme-toggle {
+  appearance: none;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--ink);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 17px;
+  line-height: 1;
+  flex: 0 0 auto;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+.theme-toggle:hover { border-color: var(--accent); transform: translateY(-1px); }
+.theme-toggle:active { transform: translateY(0); }
+.theme-toggle .i-moon { display: none; }
+:root[data-theme="dark"] .theme-toggle .i-sun { display: none; }
+:root[data-theme="dark"] .theme-toggle .i-moon { display: inline; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .theme-toggle .i-sun { display: none; }
+  :root:not([data-theme="light"]) .theme-toggle .i-moon { display: inline; }
+}
+
+/* ---------- layout ---------- */
+.wrap {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 40px 20px 90px;
+}
+
+header, header.hero {
+  text-align: center;
+  padding: 36px 0 30px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 8px;
+}
+header .app {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 14px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+}
+h1 {
+  font-size: 30px;
+  line-height: 1.25;
+  margin: 0 0 12px;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+.meta { color: var(--muted); font-size: 15px; margin: 4px 0; }
+.meta strong { color: var(--muted); font-weight: 600; }
+
+/* ---------- card / content ---------- */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 10px 30px 32px;
+  margin-top: 26px;
+  box-shadow: var(--shadow);
+}
+h2 {
+  font-size: 20px;
+  margin: 32px 0 10px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  color: var(--accent);
+  letter-spacing: -0.005em;
+}
+h2:first-of-type { margin-top: 10px; padding-top: 8px; border-top: 0; }
+p { margin: 14px 0; }
+ul { margin: 14px 0; padding-left: 22px; }
+li { margin: 8px 0; }
+strong { color: var(--ink); font-weight: 700; }
+a { color: var(--accent); text-decoration-thickness: 1.5px; text-underline-offset: 2px; }
+a:hover { text-decoration: none; }
+
+table { width: 100%; border-collapse: collapse; margin: 14px 0; }
+th, td { text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--border); font-size: 15px; }
+th { color: var(--muted); font-weight: 600; }
+
+code {
+  background: var(--accent-soft);
+  color: var(--accent);
+  padding: 2px 7px;
+  border-radius: 6px;
+  font-size: 0.87em;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+.lang-tag {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 4px 13px;
+  border-radius: 20px;
+  margin-top: 6px;
+}
+nav.lang-nav { text-align: center; margin: 18px 0 0; }
+nav.lang-nav a {
+  margin: 0 8px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--muted);
+}
+nav.lang-nav a:hover { color: var(--accent); }
+
+hr { border: none; border-top: 1px solid var(--border); margin: 36px 0; }
+
+footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 14px;
+  margin-top: 40px;
+}
+footer a { color: var(--muted); }
+footer a:hover { color: var(--accent); }
+
+/* ---------- index / directory grid ---------- */
+.intro { text-align: center; max-width: 560px; margin: 0 auto 8px; }
+.intro h1 { font-size: 32px; }
+.intro p { color: var(--muted); }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-top: 34px;
+}
+@media (max-width: 560px) {
+  .grid { grid-template-columns: 1fr; }
+}
+
+.app-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px 18px;
+  text-decoration: none;
+  color: var(--ink);
+  box-shadow: var(--shadow);
+  transition: transform 0.12s ease, border-color 0.12s ease;
+}
+.app-card:hover { transform: translateY(-2px); border-color: var(--accent); }
+.app-card .badge {
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 16px;
+  color: var(--accent-ink);
+  background: var(--accent);
+}
+.app-card .txt { min-width: 0; }
+.app-card .name { font-weight: 700; font-size: 15.5px; display: block; }
+.app-card .desc { color: var(--muted); font-size: 13.5px; display: block; margin-top: 2px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+.contact-line { text-align: center; margin-top: 40px; color: var(--muted); font-size: 15px; }
+
+/* ---------- 3-tilli (uz/ru/en) qo'shimchalar — 2026-07-22 ---------- */
+
+/* til bloklari: JS o'chgan bo'lsa ham hammasi ko'rinadi (fallback) */
+.l { display: none; }
+:root[data-lang="uz"] .l-uz,
+:root[data-lang="ru"] .l-ru,
+:root[data-lang="en"] .l-en { display: block; }
+:root:not([data-lang]) .l { display: block; }
+
+/* matn ichidagi inline til bo'laklari */
+h1 .l, p .l, .meta .l, .app .l, span.l { display: none; }
+:root[data-lang="uz"] h1 .l-uz, :root[data-lang="uz"] p .l-uz,
+:root[data-lang="uz"] .meta .l-uz, :root[data-lang="uz"] .app .l-uz,
+:root[data-lang="ru"] h1 .l-ru, :root[data-lang="ru"] p .l-ru,
+:root[data-lang="ru"] .meta .l-ru, :root[data-lang="ru"] .app .l-ru,
+:root[data-lang="en"] h1 .l-en, :root[data-lang="en"] p .l-en,
+:root[data-lang="en"] .meta .l-en, :root[data-lang="en"] .app .l-en { display: inline; }
+:root:not([data-lang]) h1 .l, :root:not([data-lang]) p .l,
+:root:not([data-lang]) .meta .l, :root:not([data-lang]) .app .l { display: inline; }
+
+.tb-right { display: flex; align-items: center; gap: 10px; }
+
+.lang-switch {
+  display: inline-flex;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.lang-switch button {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 7px 12px;
+  cursor: pointer;
+  line-height: 1;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+.lang-switch button:hover { color: var(--accent); }
+.lang-switch button.on { background: var(--accent); color: var(--accent-ink); }
+
+.notice {
+  background: var(--accent-soft);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin: 18px 0;
+  font-size: 15.5px;
+}
+
+.pl {
+  display: inline-block;
+  margin-top: 3px;
+  font-size: 12.5px;
+  color: var(--muted);
+}
+
+.legal-note {
+  color: var(--muted);
+  font-size: 13.5px;
+  border-top: 1px solid var(--border);
+  padding-top: 16px;
+  margin-top: 26px;
+}
+
+td code { word-break: break-all; }
+@media (max-width: 560px) {
+  .card { padding: 10px 18px 26px; }
+  th, td { padding: 8px 6px; font-size: 14px; }
+  .topbar { padding: 12px 14px; }
+  .lang-switch button { padding: 7px 9px; }
+}
+
+</style>
+  <script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);var q=(location.search.match(/[?&]lang=(uz|ru|en)/)||[])[1]||(location.hash.match(/^#(uz|ru|en)$/)||[])[1]||localStorage.getItem('lang');if(q)document.documentElement.setAttribute('data-lang',q);}catch(e){}})();</script>
+</head>
+<body>
+  <div class="topbar">
+    <a class="back" href="/">&larr; ishxonam.uz</a>
+    <div class="tb-right">
+      <div class="lang-switch" role="group" aria-label="Til / Язык / Language">
+        <button type="button" data-setlang="uz">UZ</button>
+        <button type="button" data-setlang="ru">RU</button>
+        <button type="button" data-setlang="en">EN</button>
+      </div>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Mavzuni almashtirish">
+        <span class="i-sun" aria-hidden="true">&#9728;&#65039;</span>
+        <span class="i-moon" aria-hidden="true">&#9789;</span>
+      </button>
+    </div>
+  </div>
+  <div class="wrap">
+    <header>
+      <span class="app"><span class="l l-uz">Do'kon/savdo boshqaruv ilovasi</span><span class="l l-ru">Приложение управления торговлей</span><span class="l l-en">Retail management app</span></span>
+      <h1><span class="l l-uz">Maxfiylik siyosati</span><span class="l l-ru">Политика конфиденциальности</span><span class="l l-en">Privacy Policy</span></h1>
+      <p class="meta"><strong>Ishxonam (Universal Store)</strong></p>
+      <p class="meta"><span class="l l-uz">Ilova identifikatori</span><span class="l l-ru">Идентификатор приложения</span><span class="l l-en">Application ID</span>: <code>com.sevenuz.ishxonam</code></p>
+      <p class="meta"><span class="l l-uz">Oxirgi yangilanish: 2026-yil 22-iyul</span><span class="l l-ru">Последнее обновление: 22 июля 2026 г.</span><span class="l l-en">Last updated: July 22, 2026</span></p>
+    </header>
+
+    <section class="card l l-uz" lang="uz">
+      <span class="lang-tag">O'zbekcha</span>
+      <h2>1. Umumiy ma'lumot</h2>
+      <p>Ishxonam (Universal Store) — kichik va o'rta savdo nuqtalari uchun ombor, kassa, mijoz va hisobot tizimining mobil ilovasi. Har bir do'kon (tenant) o'z alohida hisobiga ega. Ilova <a href="https://ishxonam.uz">ishxonam.uz</a> serveri bilan ishlaydi.</p>
+      <h2>2. Qanday ma'lumot to'planadi</h2>
+      <p>Quyidagilar <strong>faqat qurilmangizda</strong> saqlanadi:</p>
+      <ul>
+        <li>kirish tokeni va tanlangan do'kon (tenant) identifikatori</li>
+        <li>oflayn rejim uchun mahsulot va sotuv nusxasi (lokal SQLite) — internet tiklanganda serverga sinxronlanadi</li>
+        <li>ilova sozlamalari — til, mavzu (light/dark), eslatma vaqti, maqsad qiymatlari</li>
+      </ul>
+      <p>Quyidagilar <strong>serverga yuboriladi va u yerda saqlanadi</strong>:</p>
+      <ul>
+        <li>foydalanuvchi hisobi — telefon raqami yoki login, ism, rol</li>
+        <li>parol — qaytarib bo'lmaydigan hash ko'rinishida</li>
+        <li>savdo yozuvlari — mahsulotlar, narxlar, ombor qoldig'i, sotuvlar, kassa smenalari, xarajatlar</li>
+        <li>mijoz ma'lumotlari — <strong>siz kiritgan</strong> mijoz ismi, telefon raqami va qarz/to'lov tarixi</li>
+        <li>audit jurnali — kim qaysi amalni qachon bajargani (ichki xavfsizlik uchun)</li>
+      </ul>
+      <p>Ilova <strong>to'plamaydi</strong>: joylashuvingiz, telefon kontaktlari ro'yxati, qo'ng'iroq/SMS, mikrofon yozuvi, reklama identifikatori, bank karta raqamlari.</p>
+      <h2>3. Ma'lumot qayerda saqlanadi</h2>
+      <p>Ma'lumotlar Germaniyadagi (Hetzner) shaxsiy serverimizda PostgreSQL bazasida, <strong>har bir do'kon uchun alohida ajratilgan holda</strong> saqlanadi — bir do'kon boshqasining ma'lumotini ko'ra olmaydi.</p>
+      <h2>4. Ma'lumot nima uchun ishlatiladi</h2>
+      <p>To'plangan ma'lumot faqat quyidagi maqsadlarda ishlatiladi:</p>
+      <ul>
+        <li>foydalanuvchini autentifikatsiya qilish va do'koniga bog'lash;</li>
+        <li>savdo, ombor va kassa operatsiyalarini yuritish;</li>
+        <li>chek chop etish va hisobot (PDF/Excel) tayyorlash;</li>
+        <li>mijoz qarzlarini kuzatish (agar siz shu funksiyadan foydalansangiz).</li>
+      </ul>
+      <h2>5. Ma'lumot kim bilan ulashiladi</h2>
+      <p>Ma'lumot uchinchi tomonga sotilmaydi, reklama uchun ishlatilmaydi va boshqa do'konlarga ko'rsatilmaydi. <strong>Do'kon egasi sifatida siz mijozlaringiz ma'lumotining nazoratchisisiz</strong> — ularni ilovaga kiritishdan oldin mijozning roziligini olish sizning mas'uliyatingiz.</p>
+      <p>Ilovada <strong>reklama yo'q</strong>, <strong>analitika/kuzatuv SDK'lari yo'q</strong> (Firebase Analytics, Google AdMob, Facebook SDK va shu kabilar ishlatilmaydi) va foydalanuvchi profilini tuzish yoki uni uchinchi tomonga sotish amalga oshirilmaydi.</p>
+      <h2>6. Tarmoq va tashqi xizmatlar</h2>
+      <p>Ilova quyidagi tashqi xizmatlar bilan bog'lanadi:</p>
+      <ul>
+        <li><code>ishxonam.uz</code> — ilovaning backend serveri (HTTPS + WebSocket) — autentifikatsiya, savdo ma'lumotlari va real vaqtli yangilanishlar.</li>
+      </ul>
+      <p>Ilova chek chop etish uchun <strong>Bluetooth printer</strong>ga ulanishi mumkin. Bunda faqat chek matni printerga uzatiladi — hech qanday ma'lumot internetga chiqmaydi.</p>
+      <h2>7. Ruxsatlar (Permissions)</h2>
+      <table>
+        <tr><th>Ruxsat</th><th>Nima uchun</th></tr>
+        <tr><td><code>INTERNET</code><br><span class="pl">Internet</span></td><td>Quyida sanab o'tilgan tashqi xizmatlarga ulanish uchun</td></tr>
+        <tr><td><code>CAMERA</code><br><span class="pl">Kamera</span></td><td>Mahsulot shtrix-kodini skanerlash uchun; kadr saqlanmaydi va yuklanmaydi.</td></tr>
+        <tr><td><code>BLUETOOTH</code><br><span class="pl">Bluetooth</span></td><td>Tashqi qurilmaga ulanish</td></tr>
+        <tr><td><code>BLUETOOTH_SCAN</code><br><span class="pl">Bluetooth qidiruv</span></td><td>Yaqin atrofdagi qurilmani topish</td></tr>
+        <tr><td><code>BLUETOOTH_CONNECT</code><br><span class="pl">Bluetooth ulanish</span></td><td>Tashqi qurilmaga ulanish</td></tr>
+      </table>
+      <h2>8. Ma'lumot qancha saqlanadi</h2>
+      <p>Savdo yozuvlari do'kon egasi ularni o'chirmaguncha saqlanadi. Akkauntni yoki butun do'kon ma'lumotlarini o'chirish uchun <a href="https://ishxonam.uz/delete-account">ishxonam.uz/delete-account</a> sahifasidan foydalaning (yoki <a href="mailto:uzseven.uz@gmail.com">uzseven.uz@gmail.com</a> ga yozing). So'rovni <strong>7 kun ichida bekor qilish</strong> mumkin, to'liq o'chirish <strong>30 kun ichida</strong> bajariladi &mdash; to'liq shartlar va saqlash muddatlari o'sha sahifada.</p>
+      <h2>9. Sizning huquqlaringiz</h2>
+      <p>Ma'lumotlaringiz sizda bo'lgani uchun ular ustidan to'liq nazorat sizda:</p>
+      <ul>
+        <li>istalgan yozuvni ilova ichida ko'rish, tahrirlash va o'chirish;</li>
+        <li>barcha ma'lumotni bir yo'la o'chirish — ilovani o'chirib tashlash yoki Android sozlamalarida «Ma'lumotlarni tozalash»;</li>
+        <li>savol yoki shikoyat bilan biz bilan bog'lanish.</li>
+      </ul>
+      <h2>10. Xavfsizlik</h2>
+      <p>Barcha tarmoq aloqasi <strong>HTTPS/TLS</strong> orqali shifrlangan holda amalga oshiriladi. Parollar serverda qaytarib bo'lmaydigan hash (bcrypt) ko'rinishida saqlanadi; kirish tokenlari qurilmada Android Keystore bilan himoyalangan xotirada saqlanadi. Serverga dostup cheklangan va faqat administrator uchun ochiq.</p>
+      <h2>11. Bolalar maxfiyligi</h2>
+      <p>Ilova 13 yoshgacha bo'lgan bolalarga maxsus mo'ljallanmagan va ulardan ataylab hech qanday shaxsiy ma'lumot to'plamaydi. Agar bola ilovadan foydalansa, unga ota-ona nazorati tavsiya etiladi.</p>
+      <h2>12. Siyosatdagi o'zgarishlar</h2>
+      <p>Ushbu siyosat ilova funksiyalari o'zgarganda yangilanishi mumkin. Har qanday o'zgarish shu sahifada e'lon qilinadi va yuqoridagi «Oxirgi yangilanish» sanasi yangilanadi. Muhim o'zgarishlar haqida ilova ichida ham xabar beriladi.</p>
+      <h2>13. Bog'lanish</h2>
+      <p>Maxfiylik bo'yicha har qanday savol, ma'lumotni o'chirish so'rovi yoki shikoyat uchun quyidagi manzilga yozing. Odatda 7 ish kuni ichida javob beramiz.</p>
+      <p><strong>E-mail:</strong> <a href="mailto:uzseven.uz@gmail.com">uzseven.uz@gmail.com</a><br>
+      <strong>Ishlab chiquvchi:</strong> seven-uz (Zohid Juraev), O'zbekiston</p>
+      <p class="legal-note">Ushbu siyosat O'zbekiston Respublikasining «Shaxsga doir ma'lumotlar to'g'risida»gi qonuni, Google Play Developer Program Policy («User Data» va «Data safety» talablari) hamda GDPR tamoyillariga muvofiq tayyorlangan.</p>
+    </section>
+
+    <section class="card l l-ru" lang="ru">
+      <span class="lang-tag">Русский</span>
+      <h2>1. Общие сведения</h2>
+      <p>Ishxonam (Universal Store) — мобильное приложение системы склада, кассы, клиентов и отчётности для малых и средних торговых точек. Каждый магазин (tenant) имеет отдельную учётную запись. Приложение работает с сервером <a href="https://ishxonam.uz">ishxonam.uz</a>.</p>
+      <h2>2. Какие данные собираются</h2>
+      <p>Перечисленное ниже хранится <strong>только на вашем устройстве</strong>:</p>
+      <ul>
+        <li>токен доступа и идентификатор выбранного магазина (tenant)</li>
+        <li>локальная копия товаров и продаж для офлайн-режима (SQLite) — синхронизируется с сервером при появлении интернета</li>
+        <li>настройки приложения — язык, тема (светлая/тёмная), время напоминания, целевые значения</li>
+      </ul>
+      <p>Перечисленное ниже <strong>передаётся на сервер и хранится там</strong>:</p>
+      <ul>
+        <li>учётная запись пользователя — номер телефона или логин, имя, роль</li>
+        <li>пароль — в виде необратимого хеша</li>
+        <li>торговые записи — товары, цены, остатки, продажи, кассовые смены, расходы</li>
+        <li>данные клиентов — <strong>введённые вами</strong> имя клиента, телефон и история долга/платежей</li>
+        <li>журнал аудита — кто и когда выполнил операцию (для внутренней безопасности)</li>
+      </ul>
+      <p>Приложение <strong>не собирает</strong>: местоположение, список контактов телефона, звонки/SMS, записи микрофона, рекламный идентификатор, номера банковских карт.</p>
+      <h2>3. Где хранятся данные</h2>
+      <p>Данные хранятся на нашем сервере в Германии (Hetzner) в базе PostgreSQL, <strong>изолированно для каждого магазина</strong> — один магазин не видит данные другого.</p>
+      <h2>4. Для чего используются данные</h2>
+      <p>Собранные данные используются исключительно в следующих целях:</p>
+      <ul>
+        <li>аутентификация пользователя и привязка к его магазину;</li>
+        <li>ведение торговых, складских и кассовых операций;</li>
+        <li>печать чеков и подготовка отчётов (PDF/Excel);</li>
+        <li>учёт задолженностей клиентов (если вы пользуетесь этой функцией).</li>
+      </ul>
+      <h2>5. Кому передаются данные</h2>
+      <p>Данные не продаются третьим лицам, не используются для рекламы и не показываются другим магазинам. <strong>Как владелец магазина вы являетесь контролёром данных своих клиентов</strong> — получение их согласия перед вводом данных является вашей ответственностью.</p>
+      <p>В приложении <strong>нет рекламы</strong> и <strong>нет SDK аналитики/трекинга</strong> (Firebase Analytics, Google AdMob, Facebook SDK и подобные не используются). Профилирование пользователя и продажа данных третьим лицам не осуществляются.</p>
+      <h2>6. Сеть и внешние сервисы</h2>
+      <p>Приложение обращается к следующим внешним сервисам:</p>
+      <ul>
+        <li><code>ishxonam.uz</code> — backend приложения (HTTPS + WebSocket) — аутентификация, торговые данные и обновления в реальном времени.</li>
+      </ul>
+      <p>Приложение может подключаться к <strong>Bluetooth-принтеру</strong> для печати чеков. При этом на принтер передаётся только текст чека — никакие данные не уходят в интернет.</p>
+      <h2>7. Разрешения (Permissions)</h2>
+      <table>
+        <tr><th>Разрешение</th><th>Для чего</th></tr>
+        <tr><td><code>INTERNET</code><br><span class="pl">Интернет</span></td><td>Для подключения к перечисленным ниже внешним сервисам</td></tr>
+        <tr><td><code>CAMERA</code><br><span class="pl">Камера</span></td><td>Для сканирования штрих-кода товара; кадр не сохраняется и не загружается.</td></tr>
+        <tr><td><code>BLUETOOTH</code><br><span class="pl">Bluetooth</span></td><td>Подключение к внешнему устройству</td></tr>
+        <tr><td><code>BLUETOOTH_SCAN</code><br><span class="pl">Поиск Bluetooth</span></td><td>Обнаружение ближайшего устройства</td></tr>
+        <tr><td><code>BLUETOOTH_CONNECT</code><br><span class="pl">Подключение Bluetooth</span></td><td>Подключение к внешнему устройству</td></tr>
+      </table>
+      <h2>8. Сколько хранятся данные</h2>
+      <p>Торговые записи хранятся, пока владелец магазина их не удалит. Чтобы удалить аккаунт или все данные магазина, воспользуйтесь страницей <a href="https://ishxonam.uz/delete-account">ishxonam.uz/delete-account</a> (или напишите на <a href="mailto:uzseven.uz@gmail.com">uzseven.uz@gmail.com</a>). Запрос можно <strong>отменить в течение 7 дней</strong>, полное удаление выполняется <strong>в течение 30 дней</strong> &mdash; полные условия и сроки хранения указаны на той же странице.</p>
+      <h2>9. Ваши права</h2>
+      <p>Поскольку данные находятся у вас, вы полностью ими управляете:</p>
+      <ul>
+        <li>просматривать, редактировать и удалять любую запись внутри приложения;</li>
+        <li>удалить все данные разом — удалив приложение или нажав «Очистить данные» в настройках Android;</li>
+        <li>обратиться к нам с вопросом или жалобой.</li>
+      </ul>
+      <h2>10. Безопасность</h2>
+      <p>Весь сетевой обмен выполняется по шифрованному <strong>HTTPS/TLS</strong>. Пароли хранятся на сервере в виде необратимого хеша (bcrypt); токены доступа хранятся на устройстве в защищённом хранилище Android Keystore. Доступ к серверу ограничен и открыт только администратору.</p>
+      <h2>11. Конфиденциальность детей</h2>
+      <p>Приложение не предназначено специально для детей младше 13 лет и намеренно не собирает от них персональные данные. Если приложением пользуется ребёнок, рекомендуется родительский контроль.</p>
+      <h2>12. Изменения политики</h2>
+      <p>Настоящая политика может обновляться при изменении функций приложения. Любые изменения публикуются на этой странице с обновлением даты «Последнее обновление». О существенных изменениях мы также сообщаем внутри приложения.</p>
+      <h2>13. Контакты</h2>
+      <p>По любым вопросам конфиденциальности, запросам на удаление данных или жалобам пишите на адрес ниже. Обычно мы отвечаем в течение 7 рабочих дней.</p>
+      <p><strong>E-mail:</strong> <a href="mailto:uzseven.uz@gmail.com">uzseven.uz@gmail.com</a><br>
+      <strong>Разработчик:</strong> seven-uz (Zohid Juraev), Узбекистан</p>
+      <p class="legal-note">Настоящая политика подготовлена в соответствии с законом Республики Узбекистан «О персональных данных», Google Play Developer Program Policy (требования «User Data» и «Data safety») и принципами GDPR.</p>
+    </section>
+
+    <section class="card l l-en" lang="en">
+      <span class="lang-tag">English</span>
+      <h2>1. Overview</h2>
+      <p>Ishxonam (Universal Store) is the mobile app of a stock, POS, customer and reporting system for small and medium retailers. Each shop (tenant) has its own separate account. The app works with the <a href="https://ishxonam.uz">ishxonam.uz</a> server.</p>
+      <h2>2. What data is collected</h2>
+      <p>The following is stored <strong>only on your device</strong>:</p>
+      <ul>
+        <li>access token and the selected shop (tenant) identifier</li>
+        <li>a local copy of products and sales for offline mode (SQLite) — synced to the server when connectivity returns</li>
+        <li>app settings — language, theme (light/dark), reminder time, target values</li>
+      </ul>
+      <p>The following <strong>is sent to and stored on our server</strong>:</p>
+      <ul>
+        <li>user account — phone number or login, name, role</li>
+        <li>password — as an irreversible hash</li>
+        <li>trading records — products, prices, stock, sales, cash sessions, expenses</li>
+        <li>customer data — the customer name, phone number and debt/payment history <strong>you enter</strong></li>
+        <li>audit log — who performed which action and when (for internal security)</li>
+      </ul>
+      <p>The app <strong>does not collect</strong>: your location, phone contact list, calls/SMS, microphone recordings, advertising ID, or bank card numbers.</p>
+      <h2>3. Where data is stored</h2>
+      <p>Data is stored on our own server in Germany (Hetzner) in a PostgreSQL database, <strong>isolated per shop</strong> — one shop cannot see another's data.</p>
+      <h2>4. Why the data is used</h2>
+      <p>The collected data is used only for the following purposes:</p>
+      <ul>
+        <li>authenticating the user and linking them to their shop;</li>
+        <li>running sales, stock and cash operations;</li>
+        <li>printing receipts and preparing reports (PDF/Excel);</li>
+        <li>tracking customer debts (if you use that feature).</li>
+      </ul>
+      <h2>5. Who the data is shared with</h2>
+      <p>Data is never sold, never used for advertising and never shown to other shops. <strong>As the shop owner you are the controller of your customers' data</strong> — obtaining their consent before entering it is your responsibility.</p>
+      <p>The app contains <strong>no advertising</strong> and <strong>no analytics/tracking SDKs</strong> (no Firebase Analytics, Google AdMob, Facebook SDK or similar). We do not profile users and never sell data to third parties.</p>
+      <h2>6. Network and third-party services</h2>
+      <p>The app connects to the following external services:</p>
+      <ul>
+        <li><code>ishxonam.uz</code> — the app's backend (HTTPS + WebSocket) — authentication, trading data and real-time updates.</li>
+      </ul>
+      <p>The app can connect to a <strong>Bluetooth printer</strong> to print receipts. Only the receipt text is sent to the printer — nothing goes to the internet.</p>
+      <h2>7. Permissions</h2>
+      <table>
+        <tr><th>Permission</th><th>Purpose</th></tr>
+        <tr><td><code>INTERNET</code><br><span class="pl">Internet</span></td><td>To connect to the external services listed below</td></tr>
+        <tr><td><code>CAMERA</code><br><span class="pl">Kamera</span></td><td>For scanning a product barcode; the frame is not stored or uploaded.</td></tr>
+        <tr><td><code>BLUETOOTH</code><br><span class="pl">Bluetooth</span></td><td>Connecting to an external device</td></tr>
+        <tr><td><code>BLUETOOTH_SCAN</code><br><span class="pl">Bluetooth qidiruv</span></td><td>Discovering a nearby device</td></tr>
+        <tr><td><code>BLUETOOTH_CONNECT</code><br><span class="pl">Bluetooth ulanish</span></td><td>Connecting to an external device</td></tr>
+      </table>
+      <h2>8. Data retention</h2>
+      <p>Trading records are kept until the shop owner deletes them. To delete your account or the entire shop data, use <a href="https://ishxonam.uz/delete-account">ishxonam.uz/delete-account</a> (or write to <a href="mailto:uzseven.uz@gmail.com">uzseven.uz@gmail.com</a>). A request can be <strong>cancelled within 7 days</strong> and full deletion happens <strong>within 30 days</strong> &mdash; full terms and retention periods are on that page.</p>
+      <h2>9. Your rights</h2>
+      <p>Because the data is yours and stays with you, you are in full control:</p>
+      <ul>
+        <li>view, edit and delete any record inside the app;</li>
+        <li>delete everything at once — uninstall the app or use “Clear data” in Android settings;</li>
+        <li>contact us with a question or complaint.</li>
+      </ul>
+      <h2>10. Security</h2>
+      <p>All network traffic uses encrypted <strong>HTTPS/TLS</strong>. Passwords are stored on the server as an irreversible hash (bcrypt); access tokens are kept on the device in Android Keystore-backed secure storage. Server access is restricted to the administrator.</p>
+      <h2>11. Children's privacy</h2>
+      <p>The app is not directed at children under 13 and does not knowingly collect personal data from them. If a child uses the app, parental supervision is recommended.</p>
+      <h2>12. Changes to this policy</h2>
+      <p>This policy may be updated when the app's functionality changes. Any change is published on this page and the “Last updated” date above is revised. Significant changes are also announced inside the app.</p>
+      <h2>13. Contact</h2>
+      <p>For any privacy question, data-deletion request or complaint, write to the address below. We normally reply within 7 business days.</p>
+      <p><strong>E-mail:</strong> <a href="mailto:uzseven.uz@gmail.com">uzseven.uz@gmail.com</a><br>
+      <strong>Developer:</strong> seven-uz (Zohid Juraev), Uzbekistan</p>
+      <p class="legal-note">This policy is prepared in line with the Law of the Republic of Uzbekistan “On Personal Data”, the Google Play Developer Program Policy (“User Data” and “Data safety” requirements) and GDPR principles.</p>
+    </section>
+
+    <footer>
+      &copy; 2026 seven-uz &middot; Ishxonam (Universal Store) &middot; <code>com.sevenuz.ishxonam</code><br>
+      <a href="https://ishxonam.uz/privacy">ishxonam.uz/privacy</a>
+    </footer>
+  </div>
+  <script>
+(function () {
+  var KEY = "theme";
+  var root = document.documentElement;
+
+  function apply(t) {
+    if (t === "dark" || t === "light") {
+      root.setAttribute("data-theme", t);
+    } else {
+      root.removeAttribute("data-theme");
+    }
+  }
+
+  function isDarkNow() {
+    var explicit = root.getAttribute("data-theme");
+    if (explicit === "dark") return true;
+    if (explicit === "light") return false;
+    return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    var btn = document.getElementById("themeToggle");
+    if (!btn) return;
+    btn.addEventListener("click", function () {
+      var next = isDarkNow() ? "light" : "dark";
+      apply(next);
+      try {
+        localStorage.setItem(KEY, next);
+      } catch (e) {}
+    });
+  });
+})();
+
+</script>
+  <script>
+(function () {
+  var KEY = "lang";
+  var root = document.documentElement;
+  var VALID = { uz: 1, ru: 1, en: 1 };
+
+  function current() {
+    var l = root.getAttribute("data-lang");
+    return VALID[l] ? l : "uz";
+  }
+
+  function apply(l) {
+    if (!VALID[l]) l = "uz";
+    root.setAttribute("data-lang", l);
+    root.setAttribute("lang", l);
+    var btns = document.querySelectorAll("[data-setlang]");
+    for (var i = 0; i < btns.length; i++) {
+      var on = btns[i].getAttribute("data-setlang") === l;
+      btns[i].classList.toggle("on", on);
+      btns[i].setAttribute("aria-pressed", on ? "true" : "false");
+    }
+    try { localStorage.setItem(KEY, l); } catch (e) {}
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    apply(current());
+    var btns = document.querySelectorAll("[data-setlang]");
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].addEventListener("click", function () {
+        apply(this.getAttribute("data-setlang"));
+        if (history && history.replaceState) {
+          history.replaceState(null, "", location.pathname + "?lang=" + current());
+        }
+      });
+    }
+  });
+})();
+
+</script>
+</body>
+</html>
