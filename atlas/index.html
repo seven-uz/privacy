@@ -1,11 +1,10 @@
-<!-- DRAFT: avtomatik yaratilgan (2026-09-14) — nashrdan oldin muallif tekshiruvi shart -->
 <!DOCTYPE html>
 <html lang="uz" data-lang="uz">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Maxfiylik siyosati - Atlas | seven-uz</title>
-  <meta name="description" content="Atlas (com.sevenuz.atlas) - maxfiylik siyosati / политика конфиденциальности / Privacy Policy" />
+  <title>Maxfiylik siyosati — Atlas | seven-uz</title>
+  <meta name="description" content="Atlas (com.sevenuz.atlas) — maxfiylik siyosati / Политика конфиденциальности / Privacy Policy" />
   <meta name="robots" content="index, follow" />
   <link rel="icon" href="data:," />
   <link rel="stylesheet" href="/assets/style.css" />
@@ -28,129 +27,140 @@
   </div>
   <div class="wrap">
     <header>
-      <span class="app"><span class="l l-uz">kundalik vazifalar uchun mobil ilova</span><span class="l l-ru">мобильное приложение для повседневных задач</span><span class="l l-en">a mobile utility app</span></span>
+      <span class="app"><span class="l l-uz">Shaxsiy sun'iy intellekt (AI) yordamchisi</span><span class="l l-ru">Персональный ИИ-ассистент</span><span class="l l-en">Personal AI Assistant</span></span>
       <h1><span class="l l-uz">Maxfiylik siyosati</span><span class="l l-ru">Политика конфиденциальности</span><span class="l l-en">Privacy Policy</span></h1>
-      <p class="meta"><strong>Atlas</strong></p>
+      <p class="meta"><strong>Atlas: Shaxsiy Yordamchi</strong></p>
       <p class="meta"><span class="l l-uz">Ilova identifikatori</span><span class="l l-ru">Идентификатор приложения</span><span class="l l-en">Application ID</span>: <code>com.sevenuz.atlas</code></p>
-      <p class="meta"><span class="l l-uz">Oxirgi yangilanish: 2026-yil 14-sentabr</span><span class="l l-ru">Последнее обновление: 14 сентября 2026 г.</span><span class="l l-en">Last updated: September 14, 2026</span></p>
+      <p class="meta"><span class="l l-uz">Oxirgi yangilanish: 2026-yil 21-noyabr</span><span class="l l-ru">Последнее обновление: 21 ноября 2026 г.</span><span class="l l-en">Last updated: November 21, 2026</span></p>
     </header>
 
-<section class="card l l-uz" lang="uz">
+    <section class="card l l-uz" lang="uz">
       <span class="lang-tag">O'zbekcha</span>
       <h2>1. Umumiy ma'lumot</h2>
-      <p><strong>Atlas</strong> — kundalik vazifalar uchun mobil ilova. Ilova ishlashi uchun <strong>internet kerak</strong> — so'rovlar shifrlangan HTTPS orqali uzatiladi.</p>
-      <h2>2. Qanday ma'lumot to'planadi</h2>
-      <p>Faqat ilova ishlashi uchun zarur bo'lgan ma'lumot <strong>qurilmangizda</strong> saqlanadi (hive, path_provider, shared_preferences). Ilova hisob (login) talab qilmaydi.</p>
-      <h2>3. Ma'lumot qayerda saqlanadi</h2>
-      <p>Barcha yozuvlar ilovaning xususiy (sandbox) sohasida, qurilmangizda saqlanadi. Bizning serverimizga hech narsa yuborilmaydi (ilovada server qismi bo'lsa — faqat siz boshlagan amallar uzatiladi).</p>
+      <p><strong>Atlas</strong> — matnli va ovozli muloqot orqali kundalik rejalashtirish, biznes tahlili va hisobotlarda yordam beruvchi shaxsiy sun'iy intellekt (AI) yordamchisidir. Ilova ishlashi uchun internet aloqasi talab etiladi — barcha ma'lumotlar shifrlangan HTTPS va xavfsiz WSS (WebSocket) protokollari orqali uzatiladi.</p>
+
+      <h2>2. Qanday ma'lumot to'planadi va qayta ishlanadi</h2>
+      <p>Quyidagilar <strong>faqat qurilmangizda</strong> saqlanadi:</p>
+      <ul>
+        <li>Kirish kodi va avtorizatsiya tokeni (SharedPreferences);</li>
+        <li>Suhbatlar tarixi (oxirgi 50 ta sessiya) — faqat ilovaning xususiy (sandbox) xotirasida;</li>
+        <li>Foydalanuvchi interfeysi sozlamalari (ovoz tezligi, ovoz balandligi, mavzu).</li>
+      </ul>
+      <p>Quyidagilar <strong>AI xizmatiga yuboriladi</strong> (real vaqt rejimida):</p>
+      <ul>
+        <li>Foydalanuvchi yuborgan matnli savollar va buyruqlar;</li>
+        <li>Ovozli muloqot tanlanganda — mikrofon orqali yozilgan ovozli so'rovlar (nutqni matnga aylantirish va javob berish uchun).</li>
+      </ul>
+      <p>Ilova <strong>hech qachon to'plamaydi</strong>: joylashuvingiz (GPS), telefon kontaktlari, SMS yoki qo'ng'iroqlar, shaxsiy galereya, bank karta raqamlari yoki reklama identifikatorlari.</p>
+
+      <h2>3. Ma'lumot qayerda va qancha muddat saqlanadi</h2>
+      <p><strong>Qurilmangizda:</strong> Suhbatlar tarixi faqat telefoningizda saqlanadi. Foydalanuvchi istalgan paytda ilovaning «Tarix» bo'limidan yozishmalarni o'chirishi mumkin.</p>
+      <p><strong>Serverda:</strong> Serverda yozishmalar doimiy ma'lumotlar bazasiga yozilmaydi. Suhbat kontekstini saqlab turish uchun so'rovlar faqat serverning tezkor xotirasida (RAM) ushlab turiladi va <strong>6 soatdan keyin avtomatik tarzda butunlay o'chiriladi</strong>.</p>
+
       <h2>4. Ma'lumot nima uchun ishlatiladi</h2>
-      <p>Ma'lumot faqat ilovaning asosiy vazifasini bajarish uchun — yozuvlarni saqlash va ko'rsatish uchun ishlatiladi.</p>
+      <p>Ma'lumotlar faqat bitta maqsadda — <strong>ilova funksionalligi (App Functionality)</strong>, ya'ni foydalanuvchining sun'iy intellekt bilan muloqotini ta'minlash uchun ishlatiladi. Reklama yoki marketing uchun ishlatilmaydi.</p>
+
       <h2>5. Ma'lumot kim bilan ulashiladi</h2>
-      <p>Ma'lumotlaringiz <strong>hech kim bilan ulashilmaydi</strong> va sotilmaydi. Ilovada reklama ko'rsatilishi mumkin — reklama tarmog'i o'z siyosati bo'yicha anonim reklama identifikatorini qayta ishlashi mumkin.</p>
-      <h2>6. Tarmoq va tashqi xizmatlar</h2>
-      <p>Ilova ishlashi uchun <strong>internet kerak</strong> — so'rovlar shifrlangan HTTPS orqali uzatiladi.</p>
-      <h2>7. Ruxsatlar (Permissions)</h2>
-      <p>Ilova quyidagi Android ruxsatlarini so'rashi mumkin:</p>
+      <p>Foydalanuvchi ma'lumotlari hech kimga sotilmaydi va uchinchi shaxslarga uzatilmaydi. Ilovada reklama bannerlari yoki tashqi reklama trekerlari (AdMob, Facebook SDK kabi) <strong>mavjud emas</strong>.</p>
+
+      <h2>6. Ruxsatlar (Permissions)</h2>
       <ul>
-        <li><code>android.permission.CAMERA</code> — Kamera (skanerlash/suratga olish uchun)</li>
-        <li><code>android.permission.INTERNET</code> — Internetga kirish</li>
-        <li><code>android.permission.MODIFY_AUDIO_SETTINGS</code> — MODIFY_AUDIO_SETTINGS</li>
-        <li><code>android.permission.READ_EXTERNAL_STORAGE</code> — Xotiradan o'qish</li>
-        <li><code>android.permission.RECORD_AUDIO</code> — Mikrofon (ovoz yozish uchun)</li>
+        <li><code>RECORD_AUDIO</code> — Mikrofon (AI bilan ovozli muloqot qilish uchun).</li>
+        <li><code>INTERNET</code> — Shifrlangan serverga ulanish va AI javoblarini qabul qilish uchun.</li>
       </ul>
-      <h2>8. Ma'lumot qancha saqlanadi</h2>
-      <p>Ma'lumotlar ilovani o'chirib tashlaguningizcha yoki Android sozlamalarida «Ma'lumotlarni tozalash»ni bosguningizcha saqlanadi.</p>
-      <h2>9. Sizning huquqlaringiz</h2>
-      <p>Yozuvlaringizni ilova ichida ko'rish, tahrirlash va o'chirish sizning to'liq nazoratingizda. Savol yoki shikoyat uchun pastdagi manzilga yozing.</p>
-      <h2>10. Xavfsizlik</h2>
-      <p>Ma'lumot ilovaning xususiy sohasida saqlanadi — boshqa ilovalar uni o'qiy olmaydi. Serverimiz bo'lmagani uchun biz tomonda sizib chiqish xavfi yo'q.</p>
-      <h2>11. Bolalar maxfiyligi</h2>
-      <p>Ilova 13 yoshgacha bolalarga mo'ljallanmagan va ulardan ataylab shaxsiy ma'lumot yig'ilmaydi.</p>
-      <h2>12. Siyosatdagi o'zgarishlar</h2>
-      <p>Siyosat ilova funksiyalari o'zgarganda yangilanadi. O'zgarish shu sahifada e'lon qilinadi va yuqoridagi sana yangilanadi.</p>
-      <h2>13. Bog'lanish</h2>
-      <p>Maxfiylik bo'yicha savol uchun:</p>
+
+      <h2>7. Ma'lumotlarni o'chirish huquqi</h2>
+      <p>Foydalanuvchi ilovadagi «Tarix» bo'limidan suhbatlarni tozalashi yoki ilovani o'chirish orqali barcha ma'lumotlarni darhol yo'q qilishi mumkin. Serverdagi 6 soatlik vaqtinchalik xotira avtomatik tozalanadi.</p>
+
+      <h2>8. Bog'lanish</h2>
       <p><strong>E-mail:</strong> <a href="mailto:uzseven.uz@gmail.com">uzseven.uz@gmail.com</a><br>
-      <strong>Dasturchi:</strong> seven-uz (Zohid Juraev), O'zbekiston</p>
-      <p class="legal-note">Ushbu siyosat O'zbekiston Respublikasining «Shaxsga doir ma'lumotlar to'g'risida»gi Qonuni, Google Play dasturchilar siyosati («User Data») va GDPR tamoyillariga muvofiq tayyorlangan. <strong>DRAFT — avtomatik yaratilgan, muallif tekshiruvi shart (2026-09-14).</strong></p>
+      <strong>Dasturchi:</strong> seven-uz (Zohid Jurayev), O'zbekiston</p>
     </section>
 
-<section class="card l l-ru" lang="ru">
+    <section class="card l l-ru" lang="ru">
       <span class="lang-tag">Русский</span>
-      <h2>1. Общие сведения</h2>
-      <p><strong>Atlas</strong> — мобильное приложение для повседневных задач. Для работы приложению нужен <strong>интернет</strong> — запросы передаются по шифрованному HTTPS.</p>
-      <h2>2. Какие данные собираются</h2>
-      <p>На <strong>вашем устройстве</strong> хранятся только данные, нужные для работы приложения (hive, path_provider, shared_preferences).</p>
-      <h2>3. Где хранятся данные</h2>
-      <p>Все записи хранятся в частной (sandbox) области приложения на вашем устройстве. На наш сервер ничего не отправляется.</p>
-      <h2>4. Зачем используются данные</h2>
-      <p>Данные используются только для основной функции приложения — хранения и показа ваших записей.</p>
-      <h2>5. С кем делятся данные</h2>
-      <p>Ваши данные <strong>никому не передаются</strong> и не продаются. Реклама в приложении может показывать рекламная сеть — она обрабатывает анонимный рекламный идентификатор по своей политике.</p>
-      <h2>6. Сеть и сторонние сервисы</h2>
-      <p>Для работы приложению нужен <strong>интернет</strong> — запросы передаются по шифрованному HTTPS.</p>
-      <h2>7. Разрешения (Permissions)</h2>
-      <p>Приложение может запрашивать следующие разрешения Android:</p>
+      <h2>1. Общая информация</h2>
+      <p><strong>Atlas</strong> — это персональный ИИ-ассистент для планирования задач, бизнес-аналитики и отчетов с поддержкой текстового и голосового диалога. Для работы требуется подключение к интернету — все данные передаются по зашифрованным протоколам HTTPS и защищенным WebSocket (WSS).</p>
+
+      <h2>2. Какие данные собираются и обрабатываются</h2>
+      <p>Следующие данные хранятся <strong>исключительно на вашем устройстве</strong>:</p>
       <ul>
-        <li><code>android.permission.CAMERA</code> — Камера (для сканирования/съёмки)</li>
-        <li><code>android.permission.INTERNET</code> — Доступ в интернет</li>
-        <li><code>android.permission.MODIFY_AUDIO_SETTINGS</code> — MODIFY_AUDIO_SETTINGS</li>
-        <li><code>android.permission.READ_EXTERNAL_STORAGE</code> — Чтение из памяти</li>
-        <li><code>android.permission.RECORD_AUDIO</code> — Микрофон (для записи звука)</li>
+        <li>Код доступа и токен авторизации (SharedPreferences);</li>
+        <li>История сообщений (до 50 последних сессий) в изолированном хранилище приложения;</li>
+        <li>Настройки интерфейса и параметры голоса.</li>
       </ul>
-      <h2>8. Хранение данных</h2>
-      <p>Данные хранятся до удаления приложения или очистки данных в настройках Android.</p>
-      <h2>9. Ваши права</h2>
-      <p>Просмотр, редактирование и удаление записей — полностью под вашим контролем.</p>
-      <h2>10. Безопасность</h2>
-      <p>Данные хранятся в частной области приложения — другие приложения не могут их читать. Сервера у нас нет, поэтому риск утечки на нашей стороне отсутствует.</p>
-      <h2>11. Конфиденциальность детей</h2>
-      <p>Приложение не предназначено детям до 13 лет и целенаправленно не собирает их данные.</p>
-      <h2>12. Изменения политики</h2>
-      <p>Политика обновляется при изменении функций приложения. Изменения публикуются на этой странице.</p>
-      <h2>13. Контакты</h2>
+      <p>Следующие данные передаются <strong>сервису ИИ</strong> (в реальном времени):</p>
+      <ul>
+        <li>Текстовые запросы и команды, введенные пользователем;</li>
+        <li>Голосовые запросы через микрофон (при использовании голосового режима) для распознавания речи и синтеза ответа.</li>
+      </ul>
+      <p>Приложение <strong>не собирает</strong>: местоположение (GPS), контакты адресной книги, SMS, звонки, личные фото или рекламные идентификаторы.</p>
+
+      <h2>3. Где и сколько хранятся данные</h2>
+      <p><strong>На устройстве:</strong> История диалогов хранится только локально. Пользователь в любой момент может удалить переписку в разделе «История».</p>
+      <p><strong>На сервере:</strong> Сообщения не сохраняются в постоянных базах данных. Для непрерывности диалога сессия удерживается в оперативной памяти (RAM) и <strong>автоматически полностью удаляется через 6 часов</strong>.</p>
+
+      <h2>4. Цели использования данных</h2>
+      <p>Данные используются исключительно для <strong>функциональности приложения (App Functionality)</strong> — обеспечения работы ИИ-ассистента. Реклама и маркетинг отсутствуют.</p>
+
+      <h2>5. Передача третьим лицам</h2>
+      <p>Данные никогда не продаются и не передаются третьим лицам. В приложении <strong>нет рекламных трекеров</strong> (таких как Google AdMob или Facebook SDK).</p>
+
+      <h2>6. Разрешения (Permissions)</h2>
+      <ul>
+        <li><code>RECORD_AUDIO</code> — Микрофон (для голосового общения с ассистентом).</li>
+        <li><code>INTERNET</code> — Защищенное соединение с сервером ИИ.</li>
+      </ul>
+
+      <h2>7. Удаление данных</h2>
+      <p>Удалить историю можно прямо в приложении или удалив само приложение с устройства. Временный контекст на сервере очищается автоматически каждые 6 часов.</p>
+
+      <h2>8. Контакты</h2>
       <p><strong>E-mail:</strong> <a href="mailto:uzseven.uz@gmail.com">uzseven.uz@gmail.com</a><br>
-      <strong>Разработчик:</strong> seven-uz (Zohid Juraev), Узбекистан</p>
-      <p class="legal-note">Черновик — создан автоматически, требуется проверка автора.</p>
+      <strong>Разработчик:</strong> seven-uz (Зохид Жураев), Узбекистан</p>
     </section>
 
-<section class="card l l-en" lang="en">
+    <section class="card l l-en" lang="en">
       <span class="lang-tag">English</span>
       <h2>1. Overview</h2>
-      <p><strong>Atlas</strong> — a mobile utility app. The app needs <strong>internet</strong> to work — requests go over encrypted HTTPS.</p>
-      <h2>2. What data is collected</h2>
-      <p>Only the data needed for the app to work is kept <strong>on your device</strong> (hive, path_provider, shared_preferences).</p>
-      <h2>3. Where data is stored</h2>
-      <p>Everything is stored in the app's private (sandbox) area on your device. Nothing is sent to our servers.</p>
-      <h2>4. Why the data is used</h2>
-      <p>Data is used only for the app's core function — storing and showing your entries.</p>
-      <h2>5. Who the data is shared with</h2>
-      <p>Your data is <strong>shared with nobody</strong> and never sold. The app may show ads — the ad network processes an anonymous ad ID under its own policy.</p>
-      <h2>6. Network and third-party services</h2>
-      <p>The app needs <strong>internet</strong> to work — requests go over encrypted HTTPS.</p>
-      <h2>7. Permissions</h2>
-      <p>The app may request the following Android permissions:</p>
+      <p><strong>Atlas</strong> is a personal AI assistant designed for daily task management, business analytics, and reports with both text and voice interaction. An internet connection is required — all communications are secured with HTTPS and WebSocket Secure (WSS).</p>
+
+      <h2>2. Data Collected and Processed</h2>
+      <p>The following data is stored <strong>locally on your device</strong>:</p>
       <ul>
-        <li><code>android.permission.CAMERA</code> — Camera (for scanning/capture)</li>
-        <li><code>android.permission.INTERNET</code> — Internet access</li>
-        <li><code>android.permission.MODIFY_AUDIO_SETTINGS</code> — MODIFY_AUDIO_SETTINGS</li>
-        <li><code>android.permission.READ_EXTERNAL_STORAGE</code> — Reading storage</li>
-        <li><code>android.permission.RECORD_AUDIO</code> — Microphone (for audio recording)</li>
+        <li>Access code and authorization token (SharedPreferences);</li>
+        <li>Conversation history (up to 50 recent sessions) in sandbox storage;</li>
+        <li>User interface and voice preferences.</li>
       </ul>
-      <h2>8. Data retention</h2>
-      <p>Data is kept until you uninstall the app or clear its data in Android settings.</p>
-      <h2>9. Your rights</h2>
-      <p>Viewing, editing and deleting your entries is fully in your control.</p>
-      <h2>10. Security</h2>
-      <p>Data lives in the app's private area — other apps cannot read it. We run no server, so there is no breach risk on our side.</p>
-      <h2>11. Children's privacy</h2>
-      <p>The app is not directed at children under 13 and does not knowingly collect their data.</p>
-      <h2>12. Changes to this policy</h2>
-      <p>This policy is updated when the app's features change. Changes are published on this page.</p>
-      <h2>13. Contact</h2>
+      <p>The following data is transmitted to the <strong>AI service</strong> (in real time):</p>
+      <ul>
+        <li>Text messages and commands entered by the user;</li>
+        <li>Voice audio captured via microphone (when using voice mode) to transcribe speech and generate responses.</li>
+      </ul>
+      <p>The app <strong>never collects</strong>: GPS location, contacts, SMS or call logs, personal photo galleries, or advertising identifiers.</p>
+
+      <h2>3. Data Storage and Retention</h2>
+      <p><strong>On device:</strong> Conversation history resides exclusively on your device. You can clear your chats anytime in the History screen.</p>
+      <p><strong>On server:</strong> Conversations are never written to permanent disk databases. Messages are kept in volatile memory (RAM) for session continuity and are <strong>automatically purged after 6 hours</strong>.</p>
+
+      <h2>4. Purpose of Data Use</h2>
+      <p>Data is used exclusively for <strong>App Functionality</strong> to process your requests with the AI assistant. It is never used for advertising or marketing.</p>
+
+      <h2>5. Third-Party Sharing</h2>
+      <p>User data is never sold or shared with external parties. The app contains <strong>no advertising SDKs</strong> and no tracking frameworks.</p>
+
+      <h2>6. Permissions</h2>
+      <ul>
+        <li><code>RECORD_AUDIO</code> — Microphone (for live voice conversations with the AI).</li>
+        <li><code>INTERNET</code> — Encrypted connectivity to the AI backend.</li>
+      </ul>
+
+      <h2>7. Data Deletion</h2>
+      <p>You can delete chat history within the app or by uninstalling the application. Server in-memory session caches automatically expire within 6 hours.</p>
+
+      <h2>8. Contact</h2>
       <p><strong>E-mail:</strong> <a href="mailto:uzseven.uz@gmail.com">uzseven.uz@gmail.com</a><br>
       <strong>Developer:</strong> seven-uz (Zohid Juraev), Uzbekistan</p>
-      <p class="legal-note">Draft — generated automatically, author review required.</p>
     </section>
 
     <footer>
